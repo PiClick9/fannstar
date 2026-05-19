@@ -1,0 +1,1687 @@
+@charset "UTF-8";
+/* ============= 251205 박은지 ============= */
+
+/*==========cm01_main==========*/
+
+/*basic.css*/
+.fns_content_wrap nav.mnav {
+    width: 100%;
+}
+.fns_content_wrap nav.cm.mnav {
+    width: 94%;
+}
+.mnav_link.is_active.cm{
+  color: var(--main);
+    font-weight: bold;
+    border-bottom: 3px solid;
+}
+.fns_content_wrap{
+  margin-bottom: 30px;
+}
+/*팝업 안 별*/
+.SubL.pop img{
+  width: 20px;
+  vertical-align: text-bottom;
+  margin-right: 4px;
+}
+/* 광고  */
+.cm .swiper{
+  border-radius: 0px;
+}
+/* 공지 */
+.noti_box {
+  width: 100%;
+  margin: 0 auto;
+  background: var(--bg);
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+.noti_box .TitleXXS{
+  color: var(--text);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.noti_box .TitleXXS .f_mcolor{
+  text-overflow:ellipsis;
+}
+.noti_box img{
+display: inline;
+    width: 20px;
+    position: relative;
+    top: 4px;
+}
+.noti_box .TitleXXS .f_mcolor{
+  line-height: 1.5;
+}
+/* 인기스타 */
+.fns_content_wrap .confeed_header .TitleL,
+.fns_content_wrap .confeed.best .confeed_header .TitleM {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.confeed_header .TitleL div{
+  display: inline-block;
+  background-color: var(--bg);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+}
+.confeed_header .TitleL div img{
+  width: 24px;
+    vertical-align: text-top;
+    padding: 4px;
+}
+.fns_content_wrap .icon_slide.w_94:after {
+  content: '';
+  padding-right: 10px;
+}
+.fns_content_wrap .icon_slider .icon_slide {
+  justify-content: flex-start; scroll-snap-type:none
+}
+/* 인기스타 스와이프 */
+.cmstarwrap {
+  width: 94%;
+  margin: 0 auto;
+}
+.cmstarwrap .icon_column {
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 0 0 80px;
+  gap: 10px;
+  width: 100%;
+}
+.cmstarwrap .icon_column .icon_circle {
+  width: 80px;
+  height: 80px;
+}
+.cmstarwrap .icon_column .icon_circle img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+.cmstarwrap .icon_column .SubS.iconS_label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 80px;
+}
+#swiperVoteMenu.icon_slide .swiper-wrapper {
+  height: auto;
+}
+#swipercmstar .swiper-wrapper {
+  height:auto;
+}
+#swipercmstar .swiper-slide {
+  width:80px;
+  flex:0 0 auto;
+}
+#swipercmstar .swiper-slide a {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:80px;
+  text-decoration:none;
+  color:inherit;
+}
+#swipercmstar .icon_circle{
+  width:80px;
+  height:80px;
+}
+#swipercmstar .icon_circle img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:10px;
+  border: 1px solid #eaeaea;
+}
+#swipercmstar .iconS_label {
+  margin-top:8px;
+  width:100%;
+  text-align:center;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+/*260128 수정*/
+.area_fame_stars{
+  overflow-x: hidden;
+}
+.area_fame_stars .cmstarwrap .icon_column{
+  gap:0;
+}
+.position_right_bottom .swiper-pagination-bullet{
+  margin: 0 3px !important;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--text);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.position_right_bottom .swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background: var(--sub);
+  border-color: var(--text);
+}
+/*260128 수정 끝*/
+
+/*== 베스트글==*/
+/*베스트글 스와이프 인포아이콘 크기*/
+.swiper-slide .post-info img {
+    width: 18px;
+    height: auto;
+}
+
+.confeed_header.best .TitleM div{
+  display: inline-block;
+  background-color: var(--bg);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+.confeed_header.best .TitleM div img {
+    width: 21x;
+    vertical-align: text-top;
+    padding: 4px;
+  }
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  margin: 0 auto;
+}
+/*.post-list .post-item:first-child {
+  border-top: 1px solid var(--line); padding-top: 20px;
+}*/
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:100%;
+  gap: 10px;
+  align-items: stretch;
+}
+.post-left {
+  flex: 0 0 70%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /*height: 120px;*/
+    justify-content: space-between;
+    min-width: 0;
+    gap: 10px;
+}
+.post-left.no-img {
+  flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    /*height: 120px;*/
+    justify-content: space-between;
+    min-width: 0;
+    gap: 10px;
+}
+.post02 {
+  min-width: 0;
+}
+#panel_list_feed .post-item .post-left .post-type .label {
+  margin-bottom: 0;
+}
+.post-type img {
+border: none;
+    width: 20px;
+    position: relative;
+}
+.cm.board.label.label_square_m {
+    background: var(--main);
+    padding: 4px 5px;
+    color: #ffffff;
+    line-height: 1.2;
+    font-size: 11px;
+    margin-right: 2px;
+}
+.cm.label.label_square_m{
+    background: var(--sub);
+    padding: 4px 5px;
+    color: #ffffff;
+    line-height: 1.2;
+    font-size: 11px;
+    margin-right: 1px;
+}
+.post-type {
+  font-size: 12px;
+  color: #6f6f6f;
+  padding-bottom: 8px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.post-info {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: var(--text_sub);
+}
+.post-info a, .post-info div {
+  display: flex; gap: 5px; align-items: center;
+}
+.post-info .post_info_num {
+  font-size: 15px;
+}
+.post_info_icon{
+  width: 18px;
+  vertical-align: sub;
+}
+.post_info_icon.on{
+  width: 16px;
+  vertical-align: sub;
+}
+.post_info_icon.eye{
+width: 20px;
+}
+
+.post-info-num{
+    padding-right: 6px;
+}
+.post-Writer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  font-size: 13px;
+  color: var(--text_sub);
+  display: block;
+  margin-bottom: 5px;
+}
+.post-thumb {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+  align-self: end;
+}
+
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+}
+.post.swiper-pagination{
+  padding-top: 10px;
+  position : static;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+/* 최신글*/
+.post-title-icon{
+  padding-right: 5px;
+  vertical-align: text-top;
+}
+.Sbuttons.starboard_buttons{
+  justify-content: space-between;
+}
+/*==========cm02_starboard==========*/
+.Sbuttons_left .btn.btn_sm_on{
+  font-size: 15px;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+.btn.btn_sd.f_mcolor{
+  border: 1px solid var(--main);
+  color: var(--main);
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: var(--r_xs);
+  font-size: 15px;
+  width: 45px;
+  height: 30px;
+  background:#ffffff;
+}
+.btn.btn_sd.f_mcolor img{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+.starboard {
+  width:100%; position: relative;
+}
+.starboard_header.mg_t20 {
+  margin-top: 0;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 14 / 7;
+}
+.starboard_header.mg_t20 img{
+  position: absolute;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+  height: 100%;
+}
+.starboard_header.mg_t20 .Sbuttons{
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 94%;
+    margin: 0 auto;
+    padding: 14px 0 0;
+}
+.Sbuttons_rigt {
+    display: flex;
+    gap: 5px;
+}
+.starboard_title{
+  text-shadow: 0 0 8px #00000040;
+  z-index: 51;
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: 94%;
+
+}
+.starboard_title .TitleXXS {
+  margin-bottom: 3px; color: var(--main);
+}
+.TitleL.star_name {
+  color: #ffffff;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 3%;
+  word-break: break-all;
+}
+.starboard_imgshadow {
+  width: 100%;
+  position: absolute;
+  box-shadow: 0 -120px 120px -120px #000000 inset;
+  z-index: 5;
+  height: 100%;
+}
+.starboard.divider{
+    margin-top: 0;
+}
+
+/*스타 베스트글*/
+.star.best.post-item{
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  box-shadow: 0px 0 10px 0px #00000006;
+}
+.star.post-left{
+  padding: 15px;
+}
+.star.label.label_dday{
+  position: relative;
+  right: -15px;
+}
+.star.best.label.label_dday{
+  background: #E8ECFF;
+  color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 4px 6px;
+}
+/*스타 베스트글 스와이프 이미지 크기*/
+.swiper-slide .star.best.label.label_dday img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+.star.label_best{
+  display: flex;
+  gap: 5px;
+}
+
+/*스타 기본글*/
+.star.post-item{
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  box-shadow: 0px 0 10px 0px #00000006;
+  margin-bottom: 20px;
+}
+.star.post-top{
+  height: auto;
+  padding: 10px 15px 0px 15px;
+}
+.best.post01{
+  padding-top: 0px;
+}
+.best.post01 .re_profile{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 5px;
+    align-items: flex-start;
+}
+.best.post01 .re_profile .name {
+  display: inline;
+}
+.best.post01 .re_profile .name .nickname {
+  color: #979797;
+  font-size: 13px;
+  -webkit-line-clamp: 1;
+}
+.post02 .post-title{
+  padding: 20px 0 14px 0;
+}
+.post02 .more{
+  color: #979797;
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+.post-top{
+  flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 120px;
+    justify-content: space-between;
+}
+/*스타게시판 게시글 이미지 넘버링*/
+.star.post-bottom .post-img {
+    text-align: right;
+}
+.post-img-badge {
+    position: absolute;
+    right: 7%;
+    margin-top: 15px;
+    background: #77777740;
+    display: inline-block;
+    padding: 4px 8px 4px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+    line-height: 13px;
+    color: #ffffffd1;
+  }
+.post-bottom .post-img img{
+  width: 100%;
+  padding-bottom: 10px;
+}
+.post-bottom .post-info{
+  padding: 0 0 20px 15px;
+}
+/*스타게시판 일반 게시글 무한스크롤*/
+.confeed_header_star.pd_b20{
+  margin-left: 3%;
+}
+.header_pill{
+    display: flex;
+    gap: 5px;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.header_pill::after {
+      content: '';
+    padding-right: 10px;
+}
+.confeed_header_star .header_pill .pill_on{
+    background: var(--sub_100);
+    color: var(--sub);
+    font-weight: 700;
+}
+.star.post-top .post01{
+  padding-top: 10px;
+}
+.post01 .re_profile{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 5px;
+    align-items: flex-start;
+}
+.post01 .re_profile .name {
+  display: inline;
+}
+.post01 .re_profile .name .nickname {
+  color: #979797;
+  font-size: 13px;
+  -webkit-line-clamp: 1;
+  font-weight: 400;
+}
+/*==========cm03_starboard02==========*/
+/* 스타게시판 추천부스터*/
+.bottomsheet.booster{
+  height: auto;
+}
+
+.bs_header.booster {
+    height: 5px;
+    width: 10%;
+    background-color: #F5F5F5;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.bottomsheet.booster .bs_body{
+  padding: 20px 15px 20px;
+  }
+.bs_content {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+  }
+.bs_content button{
+  width: 30%;
+}
+.like01 {
+    background: #F5F5F5;
+    text-align: center;
+    padding: 12px 0px;
+    border-radius: 8px;
+  }
+  .like01 img{
+    width: 20px;
+    padding-bottom: 4px;
+  }
+  .like01 .SubS{
+    line-height: 100%;
+  }
+  
+/*==========cm04_themeboard01==========*/
+/* 테마게시판 상단 타이틀 영역 */
+.theme.Sbuttons.starboard_buttons {
+    justify-content: right;
+}
+/* 테마게시판 게시글 */
+.post-left .post01 .post-title img{
+  vertical-align: text-top;
+  padding-right: 5px;
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+.confeed_header_theme.pd_b20 {
+    width: 95%;
+    margin-left: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.themefeed .confeed_header .TitleL,
+.themefeed .confeed_header .TitleM {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+/*==========cm05_themeboard02==========*/
+.themeboard_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/*
+.themeboard_wrap a{
+display: contents;
+}
+*/
+.themeboard {
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.themeboard_header {
+  aspect-ratio: 14 / 8;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.themeboard_imgshadow {
+  width: 100%; 
+  border-radius: 10px;
+  position: absolute;
+  box-shadow: 0 -120px 120px -120px #000000 inset;
+  z-index: 100;
+  border: 8px solid #1ecad340;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+}
+.themeboard_header img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: 50% 20%;
+  height: 100%;
+}
+.themeboard_header_title{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 17px;
+}
+
+/*==========cm06_themeboard03==========*/
+.starboard_header.mg_t20 .Sbuttons.last_theme{
+  margin-bottom: 130px;
+}
+
+/*==========cm08_search==========*/
+.tabs_wrap .cm.panels{
+  margin: 0;
+}
+.cm_searchTab{
+      width: 94%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+.cm_search.c_con{
+  margin: 0;
+}
+.cm_search.divider{
+  margin: 20px auto;
+}
+.dividerS.feed.end{
+  margin-bottom: 0;
+}
+/*  인기 검색어 리스트 */
+.popular_list {
+  list-style: none;
+  padding: 0;
+}
+
+.popular_list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 순위 공통 */
+.popular_list .rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 2;
+}
+
+/* 1~3위 (민트 원) */
+.popular_list .rank_1,
+.popular_list .rank_2,
+.popular_list .rank_3 {
+  background-color: var(--main);
+  color: #fff;
+}
+
+/* 4위 이후 (연회색 원) */
+.popular_list .rank_4,
+.popular_list .rank_5,
+.popular_list .rank_6,
+.popular_list .rank_7,
+.popular_list .rank_8,
+.popular_list .rank_9,
+.popular_list .rank_10 {
+  background-color: var(--text_mute);
+  color: #fff;
+}
+
+/* 키워드 */
+.popular_list .keyword {
+  flex: 1;
+  line-height: 1.4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* hover / active */
+.popular_list li:hover {
+  background-color: var(--main_100);
+}
+
+.popular_list li:active {
+  background-color: var(--main_100);
+}
+
+/*==========cm11_freeread_my01==========*/
+.p_freeread {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    color: var(--text);
+}
+.freeread_wrap {
+    width: 94%;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+/*리드면 타이틀 */
+.read.post-type{padding-bottom: 10px;
+}
+.read.post-item{
+    display:block;
+    width: 100%;
+    text-align: left;
+}
+/*리드면 작성자 */
+.read_profile.dividerS{
+  margin: 10px auto;
+}
+.read_profile{  
+  padding-top: 0px;
+}
+.read_profile .re_profile {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 5px;
+    align-items: flex-start;
+}
+.read_profile .re_profile .name {
+    display: inline;
+    font-weight: 400;
+}
+.read_profile .re_profile .name .nickname {
+    color: #979797;
+    font-size: 13px;
+    -webkit-line-clamp: 1;
+    margin-right: 10px;
+}
+/*리드면 작성자 옆 북마크 */
+.profile_mark img{
+    width: 24px;
+    vertical-align: -webkit-baseline-middle;
+}
+/*리드면 부스터 버튼 모음*/
+.read.btn_row{
+  width: 94%;
+    margin: 0 auto;
+    gap: 10px;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding: 20px 15px;
+}
+.read.btn_row .btn_v{
+  width: auto;
+    flex: auto;
+    word-break: keep-all;
+}
+/*리드면 본문*/
+.read_body{
+    width: 100%;
+    margin: 0 auto;
+    word-break: keep-all;
+    word-wrap: break-word;
+  }
+  .read_body p{
+    font-size: var(--bodySize);
+    line-height: 1.5;
+  }
+/*리드면 본문 이미지*/
+.read_photo {
+  margin: 0;
+  overflow: hidden;
+}
+.read_photo img {
+    padding-top: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.p_freeread .freeread_wrap .read.btn_row {
+  width: 100%;
+}
+/* 260518 쿠팡 핫딜 안내 문구 추가 */
+.p_freeread .p_top_mtxt {
+  width:100%; margin: 0 auto 20px;
+}
+.p_freeread .p_top_mtxt span {
+    font-size: 14px;
+}
+/*==========cm13_themeread_other01==========*/
+.read.theme.post-title.TitleXXS{
+    line-height: 1.4;
+}
+.read.theme.post-title.TitleXXS img{
+
+}
+/* 추천부스터 버튼 */
+.read.btn_row .ubooster::before {
+    content: url(http://img.tf.co.kr/ss/fns/icon/icon_star.svg);
+    width: 15px;
+    height: 15px;}
+
+/* 스페셜부스터 버튼 */
+.read.btn_row .btn_v.spbootser {
+    background: linear-gradient(90deg, rgba(30, 202, 211, 1) 0%, rgba(139, 159, 254, 1) 64%);
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    justify-content: center;
+    padding: 10px 7px;
+}
+.read.btn_row .spbootser::before {
+    content: url(http://img.tf.co.kr/ss/fns/icon/icon_rbstar.svg);
+    width: 15px;
+    height: 15px;
+}
+/*==========cm14_starread_other==========*/
+/* 스타게시판 상단이미지 */
+.top-card{
+  height: 70px;
+  width: 94%;
+  margin: 0  auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#DDF7F9;
+  padding:10px 10px;
+  border-radius:12px;
+}
+.top-card .profile-img{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  object-fit:cover;
+}
+.top-card .text-area{
+  display:flex;
+  flex-direction:column;
+}
+.top-card .TitleXXS{
+  color:#979797;
+  margin-bottom:2px;
+}
+
+/*==========kr_cm15_freeboard_write==========*/
+/* 자유게시판 글쓰기 페이지 전체 여백*/
+.free.certified_write{
+padding: 0;
+border: 0;
+}
+/* 자유게시판 글쓰기 제목*/
+.rec_form .free.title.input{
+  min-height : 60px;
+  resize: none;
+}
+/* 글쓰기 게시판 선택*/
+.board.f_gselect{
+  margin-bottom: 15px;
+  width: 100%;
+  font-weight: 700;
+}
+
+.board.f_select{
+  margin-bottom: 15px;
+  width: 100%;
+  font-weight: 700;
+}
+/*==========kr_cm17_themeboard_write==========*/
+.theme.board.f_gselect{
+  margin-bottom: 0px;
+  width: 100%;
+  font-weight: 700;
+}
+/*==========cm18_otherfeed01==========*/
+/*헤더 텍스트*/
+.fns_logo .TitleM{
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+/*개인 프로필 전체*/
+.cm.fns_profile_wrap{
+  margin: 0;
+}
+.cm.profile-user-info {
+  padding-top: 30px;
+}
+.cm.user-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top:0px;
+  justify-content: center;
+  flex-direction: column;
+  width: 94%;
+  margin: 0 auto;
+}
+/*팬버십, g+포인트 레벨*/
+.cm.fbs_gp{
+padding-bottom: 0px;
+}
+/* gp포인트*/
+.cm.fbs_gp .fbsicon {
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+}
+
+/* 상태 메시지 말풍선*/
+.profile_status {
+  display: inline-block;
+  width: auto;
+  max-width: 80%;
+  background: var(--sub);
+  color: #fff;
+  line-height: 1.3;
+  padding: 6px 10px;
+  border-radius: 14px;
+  margin: 0 auto 12px;
+  position: relative;
+  text-align: center;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.profile_status::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50.2%;
+  transform: translateX(-50%);
+  border-width: 10px 7px 0 7px;
+  border-style: solid;
+  border-color: var(--sub) transparent transparent transparent;
+}
+/* 프로필 사진 */
+.cm.user-info .user-avatar {
+    margin-bottom: 14px;
+}
+/* 닉네임 */
+.cm.user-text{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    width: 90%;
+}
+/* 마이스타 */
+.cm.user-info .SubL.id{
+    font-size: 14px;
+    color: var(--main);
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px var(--main_400) solid
+}
+/* =====탭바2칸=======*/
+.cm.tabs_wrap .tabs_bar{
+  gap: 0px;
+}
+/* 활성 라벨 */
+#tab_img_feed:checked ~ .tabs_bar label[for="tab_img_feed"],
+#tab_list_feed:checked      ~ .tabs_bar label[for="tab_list_feed"] {
+    color:var(--main); font-weight:700;
+}
+#tab_img_feed:checked ~ .tabs_bar label[for="tab_img_feed"]::after,
+#tab_list_feed:checked      ~ .tabs_bar label[for="tab_list_feed"]::after {
+    background:var(--main);
+}
+/* 패널 표시 제어 */
+.panels .panel{ display:none; }
+#tab_img_feed:checked ~ .panels #panel_img_feed{ display:block; }
+#tab_list_feed:checked      ~ .panels #panel_list_feed{      display:block; }
+
+/* 이미지피드 비활성화 시 */
+.cm.tabs_wrap .tabs_bar .tab.img_feed{
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/v_icon_view_box_off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* 리스트피드 비활성화 시 */
+.cm.tabs_wrap .tabs_bar .tab.list_feed{ 
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/v_icon_view_list_off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+
+/* 이미지피드 활성화 시 */
+#tab_img_feed:checked ~ .tabs_bar label[for="tab_img_feed"]{
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/v_icon_view_box_color.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* 리스트피드 활성화 시 */
+#tab_list_feed:checked ~ .tabs_bar label[for="tab_list_feed"] {
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/v_icon_view_list_color.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* ==========피드============*/
+/* =====이미지 피드=======*/
+.cm .c_con_list {
+  width: 94%;
+  margin: 0 auto;
+}
+.cm.c_con_grid.grid3{
+  grid-template-columns: repeat(3, 1fr);
+}
+.cm.c_con_grid{
+  display: grid;
+  gap: 2px;
+}
+/* 피드 이미지 없을 때 */
+.cm.c_con_grid .c_conthumb {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  display: flex;
+  justify-content: center;
+  align-items:flex-start ;
+  aspect-ratio: 1 / 1;
+}
+.cm.c_con_grid .c_conthumb .SubS{
+  color: var(--text_sub);
+  padding: 10px;
+}
+/* 비공개 계정 */
+.block_state {
+    height: calc(100% - 6px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    color: var(--text);
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+.block_icon {
+    content: url(https://img.tf.co.kr/ss/fns/icon/cm_icon_block_g.svg);
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+}
+/* =====리스트 피드=======*/
+/*스타게시글 라벨*/
+.star.board.label.label_dday{
+    background: var(--main);
+}
+.star.feed.post02{
+  min-width: 0;
+  display: flex;
+  gap: 10px;
+}
+/*스타게시글 이미지*/
+.feed.post_content {
+}
+.post02 .post-title{
+  }
+.post_text{
+ word-break: break-all; 
+}
+/*스타게시글 이미지*/
+.feed.post_img {
+  flex: 0 0 30%;
+  height: 50%;
+}
+.feed.post_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+    margin-top: 10px;
+}
+.comment_title{
+  width: fit-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/*스타게시글 여백설정*/
+.feed.star.post-top{
+  padding:  0px 15px 15px;
+}
+/*게시글 내용 여백*/
+.star.feed.post02 .post-title {
+    padding: 10px 0 10px 0;
+}
+.star.feed.post02 .more{
+    padding: 0;
+}
+.feed.star.best.post-item{
+  margin-bottom: 0;
+}
+/*==========cm20_myfeed01==========*/
+/* =====탭바4칸 뒤 2칸=======*/
+.cm.tabs_wrap .tabs_bar{
+  gap: 0px;
+}
+/* 활성 라벨 */
+#tab_comment_feed:checked ~ .tabs_bar label[for="tab_comment_feed"],
+#tab_mark_feed:checked      ~ .tabs_bar label[for="tab_mark_feed"] {
+    color:var(--main); font-weight:700;
+}
+#tab_comment_feed:checked ~ .tabs_bar label[for="tab_comment_feed"]::after,
+#tab_mark_feed:checked      ~ .tabs_bar label[for="tab_mark_feed"]::after {
+    background:var(--main);
+}
+/* 패널 표시 제어 */
+.panels .panel{ display:none; }
+#tab_comment_feed:checked ~ .panels #panel_comment_feed{ display:block; }
+#tab_mark_feed:checked      ~ .panels #panel_mark_feed{      display:block; }
+
+/* 이미지피드 비활성화 시 */
+.cm.tabs_wrap .tabs_bar .tab.comment_feed{
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/cm_icon_reply_off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* 리스트피드 비활성화 시 */
+.cm.tabs_wrap .tabs_bar .tab.mark_feed{ 
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/icon_save_off.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+
+/* 이미지피드 활성화 시 */
+#tab_comment_feed:checked ~ .tabs_bar label[for="tab_comment_feed"]{
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/cm_icon_reply_on.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* 리스트피드 활성화 시 */
+#tab_mark_feed:checked ~ .tabs_bar label[for="tab_mark_feed"] {
+  background-image: url("https://img.tf.co.kr/ss/fns/icon/icon_save_on.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 30px;
+  padding: 25px 0;
+}
+/* =====댓글 피드=======*/
+/* 시간 */
+.post01 .feed.time{
+  font-size: 12px;
+  color: var(--text_mute);
+}
+.post-title.comment{
+  word-break: break-all;
+}
+.post-Writer.title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  }
+.post03 .post_info_num{    
+  font-size: 13px;
+  color: var(--text_sub);
+}
+.cm.feed.comment.post02{
+  display: flex;
+  gap: 5px;
+  white-space: nowrap;
+}
+/*==========cm22_profileedit==========*/
+/* =====프로필 편집 상단 배경=======*/
+.cm.edit.fns_topwrap.profile_top_nav{
+  background-color: #9FE4E7;
+}
+.cm.edit.profile-user-info{
+  background-color: #9FE4E7;
+  padding-top: 0px;
+}
+.cm.profile_edit {
+    background-color: var(--main);
+    border-radius: 20px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+/*상태메세지 */
+.cm.edit_field {
+    width: 94%;
+    margin: 0 AUTO;
+}
+.cm.edit.category_header{
+  margin: 30px 0 10px 0;
+}
+/*게시물 비공개 */
+.cm.edit.toggle {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-bottom: 30px;
+}
+/*260204 저장버튼 하단 여백 */
+.cm.edit_field .btn.btn_m_100{
+  margin-bottom: 40px;
+}
+
+.cm.edit.toggle {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-bottom: 30px;
+}
+/*==========cm23_point_guide==========*/
+.cm.guide.tabs_bar{
+  margin: 20px auto;
+}
+.cm_guide.mnav .mnav_list{
+border-bottom: solid 1px var(--line);
+}
+/*가이드 탭버튼 */
+#cm_guide_tap01:checked ~ .tabs_bar label[for="cm_guide_tap01"],
+#cm_guide_tap02:checked ~ .tabs_bar label[for="cm_guide_tap02"],
+#cm_guide_tap03:checked ~ .tabs_bar label[for="cm_guide_tap03"] {
+    color:var(--main); font-weight:700; background:var(--main_200); border:1px solid var(--main)
+}
+#cm_guide_tap01:checked ~ .tabs_bar label[for="cm_guide_tap01"]::after,
+#cm_guide_tap02:checked ~ .tabs_bar label[for="cm_guide_tap02"]::after,
+#cm_guide_tap03:checked ~ .tabs_bar label[for="cm_guide_tap03"]::after {
+    background:var(--main); 
+}
+#cm_guide_tap01:checked ~ .panels #cm_guide_tap01 { display:block; }
+#cm_guide_tap02:checked ~ .panels #cm_guide_tap02 { display:block; }
+#cm_guide_tap03:checked ~ .panels #cm_guide_tap03 { display:block; }
+
+/*포인트 혜택 상단 */
+.p_guide_top{    
+  background: var(--main_100);
+    padding: 30px 15px;}
+
+.p_guide_top .TitleL img{
+  width: 28px;
+  vertical-align: text-bottom;
+}
+/* =====자유스타게시판=======*/
+.cm_guide.TitleM{
+  padding-top: 20px;
+}
+/*===자유스타게시판 표=== */
+
+/*자유스타게시판 표 테두리 */
+.cm_guide_table{
+  border: solid 1px var(--line);
+  border-radius: 7px;}
+/*자유스타게시판 표-그림자 */
+.cm_guide_tg{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 7px;
+    border-style: hidden;
+    box-shadow: 2px 2px 10px -2px #00000010;
+}
+.cm_guide_tg th{
+  overflow:hidden;
+  padding:10px 5px;
+  word-break:normal;
+}
+/*자유스타게시판 표-헤더_활동*/
+.cm_guide_tg .tg-qje7{
+  background-color:#ddf7f9;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  border-radius: 7px 0 0 0;
+}
+/*자유스타게시판 표-헤더_포인트*/
+.cm_guide_tg .tg-ykk3{
+  background-color:#d1d9ff;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  border-radius: 0 7px 0 0;
+}
+/*자유스타게시판 표-바디*/
+.cm_guide_tg td{
+  border: solid 1px var(--line);
+  font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;
+  padding:10px 8px;
+  word-break:keep-all;
+}
+
+.cm_guide_tg .tg-vxga{background-color:#ffffff;text-align:center;vertical-align:middle}
+/*자유스타게시판 표-바디 하단 왼쪽*/
+.cm_guide_tg .tg-vxga.left{
+  border-radius: 0 0 0 7px;
+}
+.cm_guide_tg .tg-h53b.left{
+  border-radius: 0 0 0 7px;
+}
+/*자유스타게시판 표-바디 하단 오른쪽*/
+.cm_guide_tg .tg-vxga.right{
+  border-radius: 0 0 7px 0;
+}
+.cm_guide_tg .tg-h53b.right{
+  border-radius: 0 0 7px 0;
+}
+
+.cm_guide_tg .tg-h53b{background-color:#f5f5f5;text-align:center;vertical-align:middle}
+
+.cm_guide_tg .tg-ykk3{background-color:#d1d9ff;font-weight:bold;text-align:center;vertical-align:middle}
+
+/*가이드 구분선 여백 제거*/
+.cm_guide.dividerS{
+  margin: 0;
+}
+/*====운영정책===*/
+.p_guide_top .cm.SubLM.textm_color{
+  display: inline-block;
+  padding-top: 20px;
+}
+/*커뮤니티 가이드 표 상단 여백*/
+.tap02.tap_p_fbs_wrap{
+  padding-top:30px;
+}
+/*커뮤니티 가이드 표-헤더*/
+.cm_guide_tg .tap02.tg-qje7,.cm_guide_tg .tap02.tg-ykk3{
+  border-radius: 7px 7px 0 0;
+}
+.title.tg-vxga,.title.tg-h53b{
+  width: 24%;
+  padding: 10px 10px;
+}
+.con.tg-vxga,.con.tg-h53b{
+  text-align: left;
+}
+/*커뮤니티 가이드 표-바디 하단*/
+.cm_guide_tg .tg-h53b.end{
+  border-radius: 0 0 7px 7px;
+}
+
+
+/* =================== 탭, 폴드 영역 전체 감싸기 가로값 따로 =================== */
+@media screen and (min-width:480px) and (max-width:767px) {
+
+/*==========cm01_main==========*/
+/* 인기스타 */
+.cmstarwrap .icon_column { flex : 0 0 140px; gap: 20px; }
+.cmstarwrap .icon_column .SubS.iconS_label { width:140px }
+#swipercmstar .swiper-slide { width:140px; }
+#swipercmstar .swiper-slide a { width: 140px }
+#swipercmstar .icon_circle{ width: 140px; height: 140px; }
+
+/*==========cm22_profileedit==========*/
+/* =====프로필 편집 상단 배경=======*/
+.cm.profile_edit {
+    background-color: var(--main);
+    border-radius: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+/* 스타 게시판 */ 
+.themeboard {
+  margin: 0 auto 30px;
+}
+.themeboard_header {
+  aspect-ratio: 14 / 8;
+}
+.themeboard_header_title {
+  font-size: 18px;
+}
+
+/*테마게시판 지난테마 2열*/
+.themeboard_wrap {
+  width: 94%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 20px;
+}
+.themeboard {
+  margin: 0;
+  width: 100%;
+}
+.themeboard_header{
+  width:100%;
+  margin: 0;
+}
+
+}
+
+
+
+/* =================== 데스크탑 영역 =================== */
+/*-------------------- Tablet & Desktop Device --------------------*/
+@media all and (min-width:768px) {
+  .cm.label.label_square_m {
+    font-size: 14px;
+    padding: 3px 7px;
+  }
+  .cm.board.label.label_square_m{
+    font-size: 14px;
+    padding: 3px 7px;
+  }
+.post-type {
+  margin-bottom: 8px;
+}
+.read.post-type {
+  margin-bottom: 0px;
+}
+.post-type img{
+    border: none;
+    width: 22px;
+    position: relative;
+  }
+/*==========cm01_main==========*/
+.fns_content_wrap{
+  margin-bottom: 40px;
+}
+.post-Writer {
+  font-size:14px
+}
+/* 인기스타 */
+.cmstarwrap .icon_column { flex : 0 0 140px; gap: 20px; }
+.cmstarwrap .icon_column .SubS.iconS_label { width:140px }
+#swipercmstar .swiper-slide { width:140px; }
+#swipercmstar .swiper-slide a { width: 140px }
+#swipercmstar .icon_circle{ width: 140px; height: 140px; }
+
+/* 베스트글 */
+.confeed.best .post-list .post-item .post-thumb {
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.post-left.best {
+  flex: 0 0 60%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    min-width: 0;
+    gap: 10px;
+  }
+  
+/* 최신글 */
+.post-thumb {
+  height: 120px;
+  border-radius: 10px;
+}
+/*==========cm02_starboard==========*/
+/* 게시판 상단이미지 */
+.starboard_header.mg_t20 {
+  aspect-ratio: 14 / 6;
+}
+/* 베스트게시글 라벨 */
+.star.best.label.label_dday {
+    padding: 7px 9px;
+    border-radius: 0 0 10px 10px;
+}
+/* 일반게시글 카테고리 */
+.header_pill .btn_pill{
+  padding: 10px 20px;
+}
+
+/*스타게시판 베스트 게시글 2열 무효화*/
+.star.post-list {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  margin: 0 auto;
+  padding: 0px;
+  gap: 0px;
+}
+
+.star.best.post-item{
+  margin-bottom: 30px;
+}
+/*스타게시판 게시글*/
+.star.post-item {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #ededec70;
+    box-shadow: 0px 0 10px 0px #00000006;
+    margin-bottom: 30px;
+}
+/*스타게시판 게시글 이미지 넘버링*/
+.post-img-badge {
+    position: absolute;
+    right: 38px;
+    margin-top: 15px;
+        background: #77777740;
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        border-radius: 12px;
+        font-size: 14px;
+        line-height: 14px;
+        color: #ffffffd1;
+  }
+
+/*테마게시판 베스트글 이미지*/
+.themefeed.best .post-thumb {
+    height: 120px;
+}
+.feed.dividerS {
+  margin: 20px auto;
+}
+/*테마게시판 지난테마 2열*/
+.themeboard_wrap {
+  width: 94%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 20px;
+}
+.themeboard {
+  margin: 0;
+  width: 100%;
+}
+.themeboard_header{
+  width:100%;
+  margin: 0;
+}
+.themeboard_imgshadow {
+  /* width: calc(47% - 10px); */
+}
+.themeboard_header img {
+  /* width: calc(47% - 10px); */
+}
+.themeboard_header_title {
+  font-size: 18px;
+}
+/*==========cm08_search==========*/
+.cm_search.divider {
+    margin: 30px auto;
+}
+.cm_search.c_con{
+  margin: 0;
+}
+.dividerS.feed.end{
+  margin-bottom: 10px;
+}
+/*==========cm14_starread_other==========*/
+/* 스타게시판 상단이미지 */
+.top-card {
+    height: 80px;
+  }
+.top-card .profile-img {
+    width: 58px;
+    height: 58px;
+}
+
+.cm.c_con_grid .c_conthumb {
+   aspect-ratio: 1 / 1;
+}
+/*==========cm18_otherfeed01==========*/
+/*리스트 피드 스타게시글 이미지*/
+.feed.post_img {
+  flex: 0 0 30%;
+  height: 130px;
+  padding-bottom: 10px;
+}
+/*==========cm22_profileedit==========*/
+/* =====프로필 편집 상단 배경=======*/
+.cm.profile_edit {
+    background-color: var(--main);
+    border-radius: 20px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 30px;
+  }
+/*==========cm23_point_guide==========*/
+/*커뮤니티 가이드 표 상단 여백*/
+.tap02.tap_p_fbs_wrap{
+  padding-top:40px;
+}
+#tab_img_feed:checked ~ .tabs_bar label[for="tab_img_feed"],
+#tab_list_feed:checked ~ .tabs_bar label[for="tab_list_feed"],
+#tab_comment_feed:checked ~ .tabs_bar label[for="tab_comment_feed"],
+#tab_mark_feed:checked ~ .tabs_bar label[for="tab_mark_feed"]
+{
+  padding: 30px 0;
+}
+}

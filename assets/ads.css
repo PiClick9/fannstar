@@ -1,0 +1,1340 @@
+@charset "UTF-8";
+/* ============= base 250917 영주 ============= */
+
+/* ================== 애즈닷 홈 ====================== */
+/* ===== 상단 배너 슬라이드 ===== */
+.ads_ad .swiper {
+    aspect-ratio: 2 / 1;
+}
+.ads_ad .swiper-pagination {
+    position: absolute; bottom:10px; left: 50%; transform: translateX(-50%); z-index: 10; top:auto; right: auto;
+}
+/* 애즈닷 홈 // 버튼 */
+.m_ads_btn {
+    width:100%; margin:20px auto; gap:10px; display: flex; flex-direction: column;
+}
+.search_bar {
+    display:flex; align-items:center; width:100%; padding: 10px; border-radius: var(--r_sm); border: 1px solid var(--text_sub); background: #fff; color: var(--text_sub); outline: none; transition: .2s ease; font-size: 16px;
+}
+.search_bar:focus-within {
+    background:var(--main_200); border:1px solid var(--main); 
+}
+/* 입력창 */
+.search_input {
+    flex:1 1 auto; min-width:0; border:0; background:transparent; font-size:16px;outline:none;
+}
+.search_input::placeholder {
+    color: var(--text_sub);
+}
+/* 바텀시트 검색창 기본 X 버튼 제거 (WebKit/Chromium) */
+.search_bar input[type="search"]::-webkit-search-cancel-button,
+.search_bar input[type="search"]::-webkit-search-decoration,
+.search_bar input[type="search"]::-webkit-search-results-button,
+.search_bar input[type="search"]::-webkit-search-results-decoration{
+    -webkit-appearance: none; appearance: none; display: none;
+}
+
+/* 아이콘 버튼 공통 */
+.btn_icon {
+    flex:0 0 auto; width:32px; height:32px; border-radius:50%; display:grid; place-items:center; padding:0; cursor:pointer;
+}
+.btn_icon img {
+    width:20px 
+}
+
+/* ===== 핫 프로젝트 슬라이드 ===== */
+.swiper{aspect-ratio:auto;}
+.swiper, .swiper-slide{background:white;}
+.m_ads_hot{
+    width:100%; margin:30px auto; text-align:center;
+}
+/* 상단 타이틀 */
+.m_ads_hot .TitleL {
+    margin:40px auto 20px; color:var(--main); letter-spacing:.4px; font-weight: 800;
+}
+/* 원형 슬라이드 */
+.m_ads_hot_slider {
+    width: 100%; margin: 8px auto 14px; overflow:hidden; position:relative;
+}
+.m_ads_hot_track {
+    margin:0; padding:0 13px; display:block; gap:5px; align-items:center; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+}
+.m_ads_hot_track::-webkit-scrollbar {
+    display:none;
+}
+/* 중앙 정렬 */
+.m_ads_hot_item {
+    opacity: 0.436485;
+    transform:scale(0.67772);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.swiper-slide-active .m_ads_hot_item{ opacity: 1; transform:scale(0.99); }
+.m_ads_hot_thumb{
+    width:100%; aspect-ratio:1 / 1; border-radius:50%; overflow:hidden;
+}
+.m_ads_hot_item img {
+    width:100%; height:100%; object-fit:cover;
+}
+
+.ptalk_arrows, .ptalk_report{
+    z-index: 10;
+    pointer-events: none;
+}
+.ptalk_arrows > button, .ptalk_report > button{
+    pointer-events: auto;
+}
+
+/* 프로젝트 정보 */
+.m_ads_hot_info .p_title {
+    margin:10px 0 5px; font-size:20px;
+}
+/* 기간 */
+.m_ads_hot_info .period {
+    margin:0 0 10px; font-size:14px; color:var(--text_sub); display:flex; gap:8px; justify-content:center; align-items:center;
+}
+.m_ads_hot_info .label_square_m{
+border-radius:999px;
+}
+.m_ads_hot_info .star_count {
+    color:var(--text); font-size: 20px; font-weight: 800;
+}
+.m_ads_hot_info .star_count.rainbow {
+    background-size:20px; padding-left:25px
+}
+/* ===== 애즈닷 메인 // 인증샷 갤러리 ===== */
+.ads_gallery {
+    width:94%; margin:20px auto 30px; column-count: 2; column-gap: 10px; 
+}
+.ads_gallery li {
+    break-inside: avoid; margin-bottom: 10px; border-radius: 7px; overflow: hidden; background: #000;
+}
+.ads_gallery li img {
+    display: block; width: 100%; height: auto; object-fit: cover;
+}
+
+/* ===== 애즈닷 메인 // 인증샷 선택시 팝업 ===== */
+.m_ads_certified {
+    text-align: center; margin:0 auto 30px
+}
+.ads_certified_gridbox {
+    width: 100%; display: flex; flex-direction: column; gap: 10px
+}
+.ads_certified_gridbox .ads_certified_thumb {
+    width: 100%; position: relative;
+}
+.ads_certified_gridbox .ads_certified_thumb img {
+    width: 100%; border-radius: var(--r_md);
+}
+.ads_certified_gridbox .ads_certified_grid_title {
+    display: flex; justify-content: space-between;
+}
+.ads_certified_gridbox .ads_certified_text {
+    text-align: left; color: var(--text_sub);
+}
+.ads_certified_gridbox .ptalk_report button.download {
+    background: #ffffff url(https://img.tf.co.kr/ss/fns/icon/icon_download_m.svg) no-repeat center center;
+    background-size: 18px;
+}
+.ads_certified_gridbox .ptalk_report { 
+    inset: 15px 10px;
+}
+.ads_certified_gridbox .confeed .act {
+    width: 100%;
+}
+.ads_certified_gridbox .ads_certified_thumb .swiper-backface-hidden .swiper-slide {
+    aspect-ratio: 1/1;
+}
+/* ================== 애즈닷 상품 리스트 ================== */
+/* 애즈닷  // 상품 추가 - 상품 리스트 (컨텐츠 박스) */
+.ads_pdt {
+    display: grid; grid-template-columns: 34% 1fr; gap: 10px;
+}
+/* 썸네일 */
+.ads_p_thumbs {
+    display: block; aspect-ratio: 4 / 3;
+}
+.ads_p_thumbs img {
+    display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;
+}
+/* 텍스트 영역 */
+.ads_p_body {
+    display: grid; align-content:space-between; gap: 4px; position:relative
+}
+/* 평점 */
+.ads_p_rating {
+    display: inline-flex; align-items: center; gap: 5px; margin: 0; font-weight: 700; font-size: 14px; color: var(--text);
+}
+.ads_p_rating::before {
+content: '★';
+color: var(--sub)
+}
+/* 상품 설명 */
+.ads_p_text {
+    margin: 0; font-size: 15px; line-height: 1.3em; color: var(--text_sub); word-break: keep-all;
+}
+.ads_p_text strong {display: block;}
+/* 가격 */
+.ads_p_price {
+    background: url('https://img.tf.co.kr/ss/fns/icon/icon_rbstar.svg') no-repeat; background-position: 0 center; padding-left: 20px; background-size: 18px; color: var(--main); margin: 0; display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 18px; flex: 0 0 auto;
+}
+
+
+/* ================== 애즈닷 현금가 구매 페이지 ================== */
+.ads_cash {
+    width:94%; margin:0 auto 30px; 
+}
+.ads_cashbox {
+    background: var(--main_100); padding: 30px 20px; display: flex; flex-direction: column; gap:20px; justify-content: flex-start; align-items: center; min-height: 50vh;
+}
+.ads_cashbox .TitleS {
+color: var(--main);
+}
+.ads_cashbox .ads_cashbox_txt {
+    background:#ffffff; border:1px solid var(--main); border-radius: var(--r_md); padding:20px; width: 100%; display: flex; flex-direction: column; gap:20px; justify-content: center; align-items: center;
+}
+.ads_cashbox .ads_cashbox_txt .TitleXXS {
+    line-height: 1.1; display: inline-block; background: linear-gradient(transparent 20%, #FFF8BC 0) no-repeat; background-size: 100% 0.45em; background-position: 0 100%; padding-bottom: 0; color:var(--main)
+}
+.info_list { 
+    display:flex; flex-direction:column; gap:15px;
+}
+.info_item {
+    display:flex; flex-direction:column; gap:6px;
+}
+/* 제목*/
+.li_ttl {
+    position: relative; margin:0; padding-left:8px; font-weight: 600; font-size: 15px; line-height: 1.4;
+}
+.li_ttl::before {
+    content:""; position:absolute; left:0; top:.2em; width:3px; height:.9em; background: var(--main_400); border-radius:2px;
+}
+/* ex */
+.ex_row {
+    display:flex; align-items:center; gap:8px;
+}
+.ex_badge {
+    display:inline-block; padding:2px 8px; font-size:12px; line-height:1.3; font-weight:600; color:var(--text_sub); background:#ffffff; border:1px solid var(--text_mute); border-radius:999px; text-align:center; flex: 0 0 auto;
+}
+.ex_txt {
+    display:inline-block; font-size:13px; line-height:1.5; color: var(--text_sub);
+}
+
+
+/* ================== 애즈닷 상품 검색 // 탭 ================== */
+.tabs_wrap { 
+    width:100%; margin:0 auto 30px; background:#fff;
+}
+.tabs_wrap .tabs_ctrl { 
+    display:none;
+}
+.tabs_wrap .tabs_bar {
+    display:flex; gap:10px; width:100%;border-bottom:1px solid var(--line);
+}
+.tabs_wrap .tabs_bar .tab {
+    position:relative; flex:1; display:flex; justify-content:center; align-items:center; padding:16px 0; font-size:18px; color:var(--text); cursor:pointer; transition:color .25s;
+}
+.tabs_wrap .tabs_bar .tab::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:3px; width:100%; background:transparent; border-radius:3px; transition:background .25s;
+}
+/* 활성 라벨 */
+#tab_ads_project:checked ~ .tabs_bar label[for="tab_ads_project"],
+#tab_ads_ad:checked      ~ .tabs_bar label[for="tab_ads_ad"] {
+    color:var(--main); font-weight:700;
+}
+#tab_ads_project:checked ~ .tabs_bar label[for="tab_ads_project"]::after,
+#tab_ads_ad:checked      ~ .tabs_bar label[for="tab_ads_ad"]::after {
+    background:var(--main);
+}
+/* 패널 표시 제어 */
+.panels .panel{ display:none; }
+#tab_ads_project:checked ~ .panels #panel_aproject{ display:block; }
+#tab_ads_ad:checked      ~ .panels #panel_aad{      display:block; }
+
+/* 프로젝트 탭 */
+.ads_searchTab {
+    width:94%; margin:0 auto; display: flex; flex-direction: column; gap:15px; margin-top:30px
+}
+.search_wrap .search_bar { 
+    border:1px solid var(--text_mute)
+}
+.search_wrap .c_con_list .TitleS {
+    color:var(--main); margin-bottom:20px
+}
+.search_wrap .c_con_list .c_con_grid {
+    gap:20px 10px
+}
+.ads_searchTab .c_con { margin: 0 auto;}
+#panel_aproject { margin-bottom: 30px; }
+
+/* 광고상품 탭 // 필터 버튼 */
+.filter_wrap {
+    width:100%; margin:0 auto; background:#fff;
+}
+.filter_row {
+    display:flex; align-items:center; gap:10px; cursor: pointer; overflow-x:auto; -webkit-overflow-scrolling:touch; scroll-snap-type:x mandatory;
+}
+.filter_row > * {
+    scroll-snap-align:start;
+}
+.filter_row::-webkit-scrollbar{ display:none; }
+/* 필터 아이콘 */
+.filter_wrap .icon_svg {
+    flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; }
+.filter_wrap .icon_svg img {
+    position:relative; flex:0 0 25px; width:25px; height:25px;
+}
+/* 필터 버튼 */
+.btn_filter {
+    flex:0 0 auto; padding:7px 10px; border:1px solid var(--text_sub); border-radius:7px; background:#fff; font-size:14px; display:inline-flex; align-items:center; gap:6px; white-space:nowrap; cursor:pointer;
+}
+/* 필터 활성 상태 */
+.btn_filter.is_active{
+border:1px solid var(--main); color:var(--main);
+}
+
+/* === 광고상품 탭 // 검색 결과 == */
+.ads_aresult {
+    width:100%; margin:0 auto 40px
+}
+.ads_aresult .ads_pdt { 
+    margin:5px auto 20px
+}
+.ads_aresult .f_checkbox .f_label { 
+    font-size:18px; font-weight: 700;
+}
+
+
+/* ======================== 검색 필터 페이지 ======================== */
+
+.filter_sheet {
+    width:94%; margin:16px auto; background:#fff; border-radius:12px; overflow:hidden; padding-bottom:30px
+}
+.f_section {
+    padding:25px 0; border-bottom:1px solid var(--line);
+}
+.f_section:last-child {
+    border-bottom:0; padding-bottom:24px;
+}
+.f_title { 
+    font-weight:700; font-size:18px; margin:0 0 14px; color:var(--text); display:flex; align-items:center; gap:6px; padding-right: 22px;
+}
+.f_title.rbstar {
+    display:inline-block; background:url('https://img.tf.co.kr/ss/fns/icon/icon_rbstar.svg') no-repeat right center / 20px
+}
+/* ==== 알약 그리드 ==== */
+.filter_sheet .chips {
+    display:flex; flex-wrap:wrap; gap:10px;
+}
+.filter_sheet .chip {
+    padding:7px 15px; border-radius:999px; border:1px solid var(--line); background:#fff; color:var(--text_sub); display:inline-flex; align-items:center; font-weight:600; font-size:15px;
+    }
+.filter_sheet .chip.is_active {
+    background:var(--main_200); color:var(--main); border:1px solid var(--main_200)
+}
+/* ==== 슬라이더 ==== */
+#range {
+    background:var(--main); position:absolute; left:12px; top:0; height:100%;
+}
+.range_block {
+    margin-top:10px;
+}
+.range_tags {
+    position:relative; height:30px;
+}
+.range_tags .tag{
+    position:absolute; top:-5px; transform:translateX(-50%); background:#fff; color:var(--main); font-weight:600; font-size:13px; padding:2px 6px; border-radius:6px; border:1px solid var(--line); white-space:nowrap;
+}
+.range_scale{
+    margin-top:6px; display:flex; justify-content:space-between; color:var(--text_sub); font-size:12px;
+}
+
+/* ==== 트랙/핸들 ==== */
+.slider_wrap {
+    position:relative;
+}
+#range {
+    background:var(--main); position:absolute; left:12px; top:0; height:100%;
+}
+/* 기본 바 */
+#area_rainbow {
+    position:relative; height:5px; background:var(--line);  border-radius:5px;
+}
+/* 양끝 원 */
+#area_rainbow::before,
+#area_rainbow::after {
+    content:""; position:absolute; top:50%; width:12px; height:12px;margin-top:-6px; border-radius:50%; background:var(--line);
+}
+#area_rainbow::before {
+    left:0;
+}
+#area_rainbow::after {
+    right:0;
+}
+/* 핸들 */
+input[type="range"] {
+    position:absolute; left:-1px; top:50%; transform:translateY(-50%);width:100%; height:10px; pointer-events:none; -webkit-appearance:none; background:transparent; z-index:2;
+}
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events:all; -webkit-appearance:none; width:19px; height:19px; border-radius:50%; background:#fff; border:4px solid var(--main); cursor:pointer;
+}
+
+
+/* ======================== 프로젝트 탭 // 메인 ======================== */
+/* 프로젝트 만들기 버튼 */
+.m_ads_btn .ads_newbtn {
+    display: inline-block; background:#ffffff; border-radius: 999px; width:40px; height: 40px; line-height: 40px;
+}
+.m_ads_btn .btn {
+    display: flex; flex-direction: column; gap:10px
+}
+.m_ads_btn .ads_newbtn::before {
+    content: '+'; color:var(--main); font-size:30px
+}
+/* 컨텐츠 정렬// 오른쪽 정렬일때 c_more 추가 */
+.c_more { 
+    justify-content: flex-end; width: 100%; margin-bottom:3px
+}
+/* ======================== 프로젝트 // 리드면 ======================== */
+.ads_project_read { 
+    width:94%; margin:20px auto
+}
+.ads_project_read .c_con {
+    margin: 0 auto 10px;
+}
+.ads_project_read .card_wide .c_conthumb {
+    aspect-ratio: 14 / 9;
+}
+/* 프로젝트 설명 섹션 */
+.starcard_title {
+    display: flex; align-items: center; justify-content: space-between; margin: 15px 0 0; gap: 10px; flex-wrap: nowrap; width: 100%;
+}
+.starcard_title span {
+    color:var(--main)
+}
+.starcard_price {
+    background: url(https://img.tf.co.kr/ss/fns/icon/icon_rbstar.svg) no-repeat; background-position: 0 center; padding-left: 20px; background-size: 18px; color: var(--text); margin: 0; display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 18px; white-space: nowrap; flex-shrink: 0;
+}
+.ads_p_date { 
+    display: flex; gap:10px; align-items: center; margin-bottom:10px
+}
+.ads_p_date .datebox {
+    display: inline-block; background:var(--main); color:#ffffff; border-radius: 50px; padding:2px 10px; font-size:14px
+}
+.ads_p_date .date {
+    color:var(--text_sub); font-size:15px
+} 
+.ads_p_id {
+    background:var(--main_100); padding:20px; border-radius: var(--r_md); text-align: center; margin: 20px 0;
+}
+.ads_p_id .p_text { 
+    color:var(--text_sub); margin-bottom:20px; line-height: 1.3;
+}
+.p_id { 
+    color:var(--main); font-weight: 700;
+}
+
+/* ======= 프로젝트 리드면 // 하단 탭 ======= */
+.tabs_wrap .tabs_bar .tab2 {
+    position:relative; flex:1; display:flex; justify-content:center; align-items:center; padding:16px 0; font-size:18px; color:var(--text); cursor:pointer; transition:color .25s;
+}
+.tabs_wrap .tabs_bar .tab2::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:3px; width:100%; background:transparent; border-radius:3px; transition:background .25s;
+}
+/* 활성 라벨 */
+#tab_p_ads:checked ~ .tabs_bar label[for="tab_p_ads"],
+#tab_p_guide:checked      ~ .tabs_bar label[for="tab_p_guide"],
+#tab_p_reply:checked      ~ .tabs_bar label[for="tab_p_reply"],
+#tab_p_notice:checked      ~ .tabs_bar label[for="tab_p_notice"] {
+    color:var(--main); font-weight:700;
+}
+#tab_p_ads:checked ~ .tabs_bar label[for="tab_p_ads"]::after,
+#tab_p_guide:checked      ~ .tabs_bar label[for="tab_p_guide"]::after,
+#tab_p_reply:checked      ~ .tabs_bar label[for="tab_p_reply"]::after,
+#tab_p_notice:checked      ~ .tabs_bar label[for="tab_p_notice"]::after {
+    background:var(--main);
+}
+/* 패널 표시 제어 */
+#tab_p_ads:checked ~ .panels #aproject_ads{ display:block; }
+#tab_p_guide:checked ~ .panels #aproject_guide{      display:block; }
+#tab_p_reply:checked ~ .panels #aproject_reply{      display:block; }
+#tab_p_notice:checked ~ .panels #aproject_notice{      display:block; }
+/* 프로젝트 리드면 탭 */
+.tabs_wrap .tabs_bar .tab2 {
+    padding:0 3px 16px 3px; font-size:14px; text-align: center; line-height: 1.2;
+}
+.tabs_wrap .panels {
+    margin:20px auto
+}
+#aproject_guide, #aproject_reply, #aproject_notice { 
+    width:94%; margin:0 auto 30px
+}
+/* 댓글 수 */
+.tabs_wrap .tab2 .Rcount {
+    display: inline-block; font-size:11px; background:#ffffff;  padding:3px 4px; margin-left:5px; border-radius:3px; font-weight: 600; color:var(--main); line-height: 1; border:1px solid var(--main);
+}
+.tabs_wrap .tab2 span {
+    position: relative; display: inline-block
+}
+.tabs_wrap .tab2 span .dotbadge {
+    right: -7px; top: -7px;
+}
+
+/* ==== 탭 // 광고상품 ==== */
+.ads_project_read .tabs_wrap .angel_ads_grid {
+    width:100%; margin:20px auto 0
+}
+.ads_fbox { 
+    width:94%; margin:20px auto; text-align: center; word-break: keep-all; color: var(--text_sub); 
+}
+/* 100% 달성 오버레이 */
+.ads_success {
+    position: absolute; inset: 0; background: url('https://img.tf.co.kr/ss/fns/2026/ads_sucsess_bg.png') center/cover no-repeat; pointer-events: none;z-index: 5; border-radius: 10px;  opacity:0.6
+}
+/* SOLD OUT 오버레이 */
+.ads_soldout {
+    position: absolute; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; z-index: 6; border-radius: 10px;
+}
+
+/* ==== 탭 // 이용가이드 ==== */
+#aproject_guide .list_text {
+    margin:20px auto
+}
+#aproject_guide .list_text ul {
+    gap:10px
+}
+#aproject_guide .list_text li { 
+    color:var(--text); word-break: keep-all; line-height: 1.35;
+}
+#aproject_guide .list_text .ads_fguide {
+    margin:20px auto 10px; background:var(--main); color:#fff; display: inline-block; font-size:16px; padding:3px 5px
+}
+#aproject_guide .list_text .fguide_ex {
+    color:var(--text_sub); font-size:13px
+}
+#aproject_guide .box_contents .TitleXS {
+    color:var(--text)
+}
+#aproject_guide .box_contents ul {
+    display: flex; flex-direction: column; gap: 7px; margin-top:10px; margin-left: 15px;
+}
+#aproject_guide .box_contents ul li {
+    font-size:15px; list-style: decimal; word-break: keep-all; color:var(--text_sub)
+}
+
+/* ==== 탭 // 댓글 ==== */
+/* 프로젝트 댓글 전체 감싸기 */
+.pj_reply {
+    width:100%; margin:20px auto
+}
+/* 프로젝트 댓글 다듬기 */
+.pj_reply .replybox {
+    border:0; 
+}
+.pj_reply .replybox .replybox_input {
+    width:94%
+}
+
+/* ==== 탭 // 공지사항 ==== */
+.pj_notice_wrap {
+    width:100%;margin:16px auto;display:flex;flex-direction:column;gap:10px
+}
+.pj_acc_item {
+    background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden
+}
+.pj_acc_toggle {
+    appearance:none; position:absolute; width:1px; height:1px; margin:-1px;padding:0; overflow:hidden; clip:rect(0 0 0 0); border:0
+}
+.pj_acc_btn {
+    display:flex; align-items:center; justify-content:space-between;gap:12px; padding: 10px 15px; cursor:pointer; user-select:none; background:var(--bg)
+}
+.pj_acc_btn:focus-visible {
+    outline:2px solid var(--main); outline-offset:-2px; border-radius:10px
+}
+.pj_acc_title {
+    font-size:15px; line-height:1.35; color:var(--text); font-weight:600;
+}
+.pj_acc_panel {
+    display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease
+}
+.pj_acc_inner {
+    overflow:hidden
+}
+/* 내용 펼쳐졌을때 */
+.pj_acc_toggle:checked + .pj_acc_btn .icon_arrow::after {
+    transform:rotate(-45deg) translateY(4px);
+}
+.pj_acc_toggle:checked + .pj_acc_btn {
+    background:var(--main_200)
+}
+.pj_acc_toggle:checked ~ .pj_acc_panel {
+    grid-template-rows:1fr
+}
+/* 내용*/
+.pj_acc_inner .pj_acc_inner_txt {
+    padding: 20px 10px; font-size:14px;line-height:1.55 ;
+}
+
+
+/* ==== 탭 // 인증샷 ==== */
+#aproject_guide .ads_starmove {
+    text-align: center; margin: 30px auto;
+}
+#aproject_guide .btn3wrap { margin:0 }
+#aproject_guide .angel_ads_grid, #aproject_guide .ads_gallery { width:100% }
+.ads_certified_thumb img { width:100% }
+.ads_starmove .meta .ulabel img {
+    width:20px; vertical-align: middle;
+}
+
+/* 프로젝트 리드면 탭 : 제일 하단에 추가*/
+#aproject_reply{
+    width:100%;
+}
+
+/* ==== 인증샷 올리기 폼 ==== */
+.certified_write {
+    width:94%; margin:0 auto; padding:20px 0 30px;
+}
+.certified_write .field .f_select { 
+    width:100%
+}
+.certified_write .angel_ads_grid { 
+    grid-template-columns:auto;
+}
+/* 별점 시작 */
+.rec_form {
+    width:100%; margin:20px auto; color:var(--text); display: flex; flex-direction: column; gap:15px;
+}
+.rec_form .TitleM, .rec_form .rating { 
+    align-items: center; text-align: center; justify-content: center;
+}
+.rec_form .rating {
+    border:0; padding:0; display:inline-flex; gap:10px; flex-direction:row-reverse; margin-bottom:20px
+}
+.rating input {
+    appearance:none; width:0; height:0; position:absolute;
+}
+/* 별 라벨 */
+.rating .star {
+    width:30px; height:30px; display:flex; justify-content:center; align-items:center; cursor:pointer; user-select:none;
+}
+/* SVG */
+.rating .star svg{
+    width:100%; height:100%; fill:var(--text_mute); stroke:var(--text_mute); stroke-width:2; transition:.25s ease;
+}
+/* 별 채우기 */
+.rating input:checked ~ .star svg {
+    fill:var(--sub); stroke:var(--sub);
+}
+/* 포커스 */
+.rating input:focus-visible + .star svg {
+    outline:2px solid var(--sub); outline-offset:3px; border-radius:6px;
+}
+/* ==== 프로젝트 종료후 해당 상품 인증샷 올리기 폼 ==== */
+.certified_write .angel_ads_grid {
+    width:100%; 
+}
+.certified_write .angel_ads_grid .angel_ads_grid_title {
+    margin:15px 0 5px
+}
+.certified_write .angel_ads_grid .ads_p_date {
+    margin:5px 0 0 0
+}
+
+/* ====================== 프로젝트 // 별 이동 팝업 ====================== */
+.ads_starmove .meta .ulabel {
+    line-height:1.1; display:inline; background: linear-gradient(transparent 20%, var(--sub_200) 0) no-repeat; background-size: 100% 0.45em; background-position: 0 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; font-size:18px; font-weight:700;
+}
+.ads_starmove .box_star_ads .star_vote {
+    flex-direction: column; 
+}
+.ads_starmove #amt10:checked+.pillBtn, .ads_starmove #amt50:checked+.pillBtn, .ads_starmove #amt100:checked+.pillBtn, .ads_starmove #amtAll:checked+.pillBtn {
+    background: var(--sub_100);
+    color: var(--sub);
+}
+.ads_starmove .btn_plus {
+    background: var(--sub_300);
+}
+.ads_starmove .pill_box {
+    text-align: left; padding: 20px 15px; display: flex; gap: 10px; flex-direction: column;
+}
+
+/* ====================== 프로젝트 // 별 기부 팝업 ====================== */
+.ads_stardonation .meta .ulabel {
+    line-height:1.1; display:inline; background: linear-gradient(transparent 20%, var(--sub_200) 0) no-repeat; background-size: 100% 0.45em; background-position: 0 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; font-size:18px; font-weight:700;
+}
+.ads_stardonation #amt210:checked+.pillBtn, .ads_stardonation #amt250:checked+.pillBtn, .ads_stardonation #amt2100:checked+.pillBtn, .ads_stardonation #amt2All:checked+.pillBtn {
+    background: var(--sub_100);
+    color: var(--sub);
+}
+.ads_stardonation .btn_plus {
+    background: var(--sub_300);
+}
+.ads_stardonation .pill_box {
+    text-align: left; padding: 20px 15px; display: flex; gap: 8px; flex-direction: column;
+}
+.ads_stardonation .SubL { 
+    font-size:15px; color:var(--text_sub); word-break: keep-all;
+}
+
+
+/* ====================== 프로젝트 // 상품 추가 리스트 ====================== */
+.ads_pj_add_list {
+    width:94%; margin:0 auto;
+}
+.ads_pj_add_list .star_vote { 
+    flex-direction: column; gap:5px; text-align: center;
+}
+.ads_pj_add_list .star_vote .star_count {
+    margin-left:0
+}
+
+/* ================== 상품 // 상품 리스트 =================== */
+.ads_search {
+    width: 94%; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; padding-top: 10px
+}
+.ads_Plist {
+    width:94%; margin:20px auto 30px
+}
+/* ================== 상품 // 상품 상세 페이지 =================== */
+.ads_Plist_detail {
+    width:100%; margin:0 auto
+}
+
+.ads_Plist_detail .angel_ads_grid .ads_p_rating {
+    margin-bottom: 0px;
+}
+.ads_Plist_detail .detail_txt {
+    width:94%; margin:0 auto 80px; color:var(--text_sub); word-break: keep-all;
+}
+/* ============= 상품 // 상품 상세 페이지 => 상품 추가 팝업 ============== */
+.pcon .ads_search {
+    width: 100%; padding:0; border:none
+}
+.Pdetail_add {
+    display: block; width: 100%; height: 250px; margin:10px auto; font-size: 15px; position: relative; line-height: 0; overflow-y: auto; scrollbar-gutter: stable; padding:10px 0
+}
+.Pdetail_add_list {
+    display: flex; flex-direction: column; gap: 10px; 
+}
+.Pdetail_add_list .Plist {
+    display:grid; grid-template-columns: 56px 1fr 24px; gap:10px; align-items:center; padding:0 10px 10px 0; border-bottom:1px solid var(--line);
+}
+.Pdetail_add_list .Plist .Plist_thumb {
+    width:56px; aspect-ratio:1/1; /* 1:1 */
+}
+.Pdetail_add_list .Plist .Plist_thumb img {
+    width:100%; height:100%; object-fit:cover; border-radius:999px;
+}
+.Pdetail_add_list .Plist .Plist_check {
+    grid-column: 2 / 4; 
+}
+.Pdetail_add_list .Plist .Plist_check .f_radio {
+    display:grid; grid-template-columns: 1fr 24px; align-items:center; gap:8px; width:100%; justify-content:initial;
+}
+.Pdetail_add_list .Plist .Plist_check .f_label {
+    grid-column:1; min-width:0;
+}
+.Pdetail_add_list .Plist .Plist_check .f_circle {
+    grid-column:2; justify-self:end; width:22px; height:22px; border-radius:50%;
+}
+.Pdetail_add_list .Plist .Plist_con {
+    text-align:left; line-height:1.3; font-size:15px; word-break:keep-all;
+}
+.Pdetail_add_list .Plist .Plist_con > span {
+    display:block;
+}
+.Pdetail_add_list .Plist .Plist_con p { 
+    margin-top:5px
+}
+.Pdetail_add {
+    display:block; width:100%; height:250px; margin:10px auto; font-size:15px; position:relative; line-height:0; overflow-y:auto; scrollbar-gutter:stable; padding:10px 0;
+}
+.pcon .box_star_ads .SubS { 
+    word-break: keep-all;
+}
+.pcon .box_star_ads .star_vote {
+    justify-content: center;
+}
+.pcon .pdnone .btn { 
+    margin:0 
+}
+
+/* ======================== 애즈맵 ======================== */
+.a_map_wrap {
+    width:100%; margin:0 auto; position:relative; min-height:100vh; overflow:hidden;
+}
+.a_map_wrap .a_map {
+    position:relative; width:100%; height:100vh;
+}
+.a_map_wrap .a_map iframe {
+    position:absolute; inset:0; width:100%; height:100%; border:0; opacity:0.4;
+}
+.a_map_search {
+    width:94%; position: absolute; top:20px; left: 50%; transform: translateX(-50%); z-index: 3;
+}
+.a_map_search .search_wrap {
+    margin-bottom:10px;
+}
+.a_map_search .a_map_btn {
+    gap:5px;
+}
+.a_map_search .btn_pill {
+    background:#ffffff; box-shadow:0 2px 3px rgba(0,0,0,.25); padding: 5px 9px; color:var(--text); margin:0; vertical-align:top;
+    width:auto;
+    height:27px;
+    margin-bottom:5px;
+}
+/* 활성화 */
+.a_map_search .btn_pill.pill_on {
+    background:var(--main); color:#ffffff; border:none; font-weight: normal;
+}
+/* 버튼 아이콘 */
+.a_map_search .btn_pill img {
+    width:15px; vertical-align: middle;
+}
+.a_map .a_map_pin {
+    position: absolute; /* 위치는 스타일로 */ z-index: 2;
+}
+.a_map .a_map_pin a {
+    display: flex; flex-direction: column; align-items: center;
+}
+.a_map .a_map_pin img {
+    width:33px;
+}
+.a_map .a_map_pin span {
+    background:var(--text); color:#ffffff; font-size:12px; border-radius: 999px; padding:0px 5px;
+}
+
+/* ======================== 인증샷 메인 ======================== */
+.ads_certified_top {
+    width:94%; margin:20px auto
+}
+.m_ads_certified .empty_state {
+    margin:20px auto
+}
+
+/* ======================== 인증샷 // 리드면 ======================== */
+.ads_certified_read {
+    width:100%; margin:0 auto;
+}
+.ads_certified_read .confeed_text {
+    width:100%; display: flex; flex-direction: column; gap: 10px;
+}
+
+/* ======================== 프로젝트 // 만들기 폼 ======================== */
+.mcbox {
+    width:100%; background:var(--main); display: flex; flex-direction: column; gap:10px; padding:20px 10px; color:#ffffff; align-items: center; word-break: keep-all; text-align: center;
+}
+.mcbox .TitleS {
+    color:#ffffff; background:url('https://img.tf.co.kr/ss/fns/icon/icon_light.svg') no-repeat left center / 25px; padding-left:25px
+}
+.mcbox span {
+    font-size:15px
+}
+.ads_project_form {
+    width:94%; margin:30px auto 0
+}
+.ads_project_form .dividerS {
+    margin:30px 0
+}
+/* 폼 공통 */
+.ads_project_form select {
+    width:100%
+}
+.ads_project_form .field {
+    gap:10px; margin:0 auto 30px
+}
+.ads_project_form .field .field_label {
+    margin:0; font-size:17px
+}
+.ads_project_form textarea { 
+    min-height:120px;
+}
+.af_title { 
+    margin:10px 0 7px ; font-weight: 600;
+}
+.af_country .af_country_box {
+    background:var(--bg); padding:20px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; border-radius: 10px;
+}
+/* 테마별 입력폼 */
+.ads_project_form .af_anniversary {
+    flex: 0 0 60%;
+}
+.af_country_con {
+    display: flex; flex-direction: column; gap:10px; margin-top:5px; position: relative;
+}
+/* 프로젝트 배너, 이미지 */
+.af_banner span { 
+    color:var(--main); font-size:14px
+}
+.af_pimage {
+    display: flex; flex-direction: column; gap:10px; margin-top:5px
+}
+/* 프로젝트 이미지 제작 선택 */
+.af_custom_c {
+    display: flex; gap:5px; padding:20px; background:var(--bg); border-radius: 10px;
+}
+.af_custom_c label { 
+    flex: 1;
+}
+/* 직접 제작 방법 */
+.af_tbox {
+    background:var(--main_100); padding:20px 15px; border-radius: var(--r_md);
+}
+.af_tbox ul {
+    display: flex; flex-direction: column; gap:7px; margin:12px 0 12px 15px 
+}
+.af_tbox ul li {
+    font-size:14px; list-style: decimal; word-break: keep-all;
+}
+.af_tbox span {
+    display: inline-block; color:var(--warning); font-size:13px; word-break: keep-all; line-height: 1.2;
+}
+/* 약관 동의 내용 */
+.af_agree {
+    background:var(--bg); padding:10px 15px; border-radius: var(--r_md);
+}
+.af_agree ul {
+    display: flex; flex-direction: column; gap:7px; margin:12px 0 12px 15px 
+}
+.af_agree ul li {
+    font-size:14px; list-style: decimal; word-break: keep-all;
+}
+.af_btn {
+    display: flex; flex-direction: column; gap:10px; margin:30px auto
+}
+
+/* 260317 추가 */
+.guide_mail {
+    margin:20px 0 0; padding:20px 0 0; font-size:15px; font-weight:500; border-top: 1px solid var(--line);
+}
+.guide_mail strong {
+    font-weight:800; color:var(--text);
+}
+
+/* ======================== 애즈닷 // 이용가이드 ======================== */
+.ads_g_top { 
+    background:var(--bg); padding:20px 15px; display: flex; flex-direction: column; gap:10px
+}
+.ads_g_process {
+    width:94%; margin:20px auto
+}
+.g_process_box {
+    background:var(--main_200); padding:20px 15px; border-radius: var(--r_md); margin-top: 10px;
+}
+.process_list { 
+    list-style:none; margin:0; position:relative;
+}
+.process_list::before {
+    content:""; position:absolute; left:15px; top:2px; bottom:0; width:0; border-left:1px dashed var(--text); opacity:.4;
+}
+.process_item {
+    position:relative; display:flex; align-items:center; gap:10px; padding-left:30px; margin-bottom:15px;
+}
+.process_item:last-child {
+    margin:0
+}
+.tl_icon {
+    position:absolute; left:5px; top:-2px; width:22px; height:22px; border-radius:999px; color:#ffffff; background:var(--main); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:600; box-shadow:0 2px 4px rgba(0,0,0,.06);
+}
+.tl_title {
+    margin-left: 10px; font-size:15px; font-weight:600;
+}
+/* 애즈닷 이용안내 탭 */
+.ads_g_process_tab .tabs_bar .tab2 {
+    position:relative; flex:1; display:flex; justify-content:center; align-items:center; padding:0 2px 16px; font-size:15px; color:var(--text); cursor:pointer; transition:color .25s;
+}
+.ads_g_process_tab .tabs_bar .tab2::after{
+    content:""; position:absolute; left:0; bottom:-2px; height:3px; width:100%; background:transparent; border-radius:3px; transition:background .25s;
+}
+.ads_g_process_tab .tabs_ctrl {
+    display: none;
+}
+/* 활성 라벨 */
+#tab_ads_01:checked ~ .tabs_bar label[for="tab_ads_01"],
+#tab_ads_02:checked      ~ .tabs_bar label[for="tab_ads_02"],
+#tab_ads_03:checked      ~ .tabs_bar label[for="tab_ads_03"] {
+    color:var(--main); font-weight:700;
+}
+#tab_ads_01:checked ~ .tabs_bar label[for="tab_ads_01"]::after,
+#tab_ads_02:checked      ~ .tabs_bar label[for="tab_ads_02"]::after,
+#tab_ads_03:checked      ~ .tabs_bar label[for="tab_ads_03"]::after {
+    background:var(--main);
+}
+/* 패널 표시 제어 */
+#tab_ads_01:checked ~ .panels #ads_g_01{ display:block; }
+#tab_ads_02:checked ~ .panels #ads_g_02{      display:block; }
+#tab_ads_03:checked ~ .panels #ads_g_03{      display:block; }
+/* 프로젝트 리드면 탭 */
+
+.ads_g_process_tab .tabs_wrap .panels {
+    padding:20px 0; background:var(--bg); margin:0 auto 
+}
+
+
+
+
+/* ============= 260113 영주 ============= */
+/* ******************** 패드, 탭, 폴드 영역 ******************** */
+@media screen and (min-width:480px) and (max-width:767px) {
+
+/* ================== 애즈닷 홈 ====================== */
+.m_ads_btn { gap: 14px; }
+/* 검색바 */
+.search_bar { padding: 12px; font-size: 17px; }
+.btn_icon img { width: 22px; }
+/* 인증샷 팝업 */
+.ads_certified_gridbox .ads_certified_thumb { aspect-ratio: 4 / 3; overflow: hidden; }
+.ads_certified_gridbox .ads_certified_thumb img { height: 100%; object-fit: cover; object-position: center; }
+.ads_certified_gridbox { gap: 14px; }
+.ads_certified_gridbox .ptalk_report button.download { background-size: 20px; }
+
+/* ================== 애즈닷 상품 리스트 ================== */
+.ads_pdt { grid-template-columns: 30% 1fr;  gap: 14px; }
+.ads_p_body { align-content: space-between; }
+.ads_pdt .ads_p_body .ads_p_price { font-size: 20px; }
+.ads_p_price { font-size:22px }
+.ads_p_rating { font-size: 16px; }
+.ads_p_rating::before { font-size: 18px; }
+
+/* ================== 애즈닷 현금가 구매 페이지 ================== */
+
+
+/* ================== 애즈닷 상품 검색 // 탭 ================== */
+.ads_searchTab .c_con_card .c_conthumb { aspect-ratio: 4 / 2.5; }
+.ads_searchTab .c_con { margin: 0 auto;}
+#panel_aproject { margin-bottom: 30px; }
+.search_input { font-size: 17px; }
+.btn_filter { padding: 10px 12px; font-size: 15px; }
+.ads_aresult .ads_pdt { margin: 10px auto 30px; }
+
+/* ======================== 검색 필터 페이지 ======================== */
+.f_section { padding: 30px 0; }
+.f_title { font-size: 20px; }
+.filter_sheet .chip { font-size: 16px;}
+.range_scale { font-size: 13px; }
+.range_tags .tag { font-size: 14px; }
+.f_title.rbstar { background: url('https://img.tf.co.kr/ss/fns/icon/icon_rbstar.svg') no-repeat right 48% / 24px; padding-right: 28px; }
+
+/* ======================== 프로젝트 탭 // 메인 ======================== */
+.c_more { margin-bottom: 6px;}
+
+
+/* ======================== 프로젝트 // 리드면 ======================== */
+.ads_p_date .datebox { font-size: 16px; }
+.ads_p_date .date { font-size: 17px; }
+.ads_project_read .card_wide .c_conthumb { aspect-ratio: 14 / 8; }
+.ads_project_read .starcard_price { font-size: 22px; padding-left: 26px; background-size: 23px; }
+.tabs_wrap .panels { margin: 30px auto; }
+.angel_ads_grid .angel_ads_grid_title { align-items: flex-start; }
+#aproject_guide, #aproject_reply, #aproject_notice { margin: 0 auto 50px; }
+.ads_project_read .ads_p_date { margin-bottom: 14px; }
+
+
+/* ======= 프로젝트 리드면 // 하단 탭 ======= */
+.tabs_wrap .tabs_bar .tab2 { font-size: 17px; }
+.ads_soldout { font-size:32px }
+.tabs_wrap .tab2 .Rcount { font-size: 12px; }
+#aproject_guide .list_text .fguide_ex { font-size: 14px; }
+#aproject_guide .ads_starmove { margin: 40px auto; }
+/* 아코디언 2 */
+.pj_acc_btn { gap:14px; padding: 20px 30px 20px 20px; }
+.pj_acc_title { font-size: 17px; }
+.pj_acc_btn .icon_arrow::after { width: 10px; height:10px }
+.pj_acc_inner .pj_acc_inner_txt { padding: 30px 20px; font-size: 16px; }
+/* ==== 인증샷 올리기 폼 ==== */
+.rec_form { margin: 30px auto; gap: 20px; }
+.attach_wrap .is_filled .btn_remove { width: 32px; height: 32px; }
+.attach_wrap .is_filled .btn_remove::before { font-size: 18px; }
+.attach_wrap .add_tile .plus::before { font-size:50px }
+.rec_form .TitleM { font-size:22px }
+/* 프로젝트 종료후 해당 상품 인증샷 올리기 폼 */
+.angel_ads_grid .angel_ads_thumb { aspect-ratio: 3 / 1.6;}
+.certified_write .angel_ads_grid .angel_ads_grid_title { margin: 15px 0 8px; flex-direction: row; }
+.ads_certified_thumb { width: 100%; aspect-ratio: 4 / 3; }
+.ads_certified_thumb img { width: 100%; height: 100%; object-fit: cover; }
+.certified_write .angel_ads_grid .angel_ads_grid_title { margin: 20px 0 0; flex-direction: row; }
+.certified_write .angel_ads_grid .angel_ads_grid_title .TitleS { height: auto; }
+.certified_write .angel_ads_grid .angel_ads_grid_title .ads_p_price { font-size: 22px;}
+.certified_write .angel_ads_grid .ads_p_date { margin: 14px 0 0 0;}
+
+/* ====================== 프로젝트 // 별 이동 팝업 ====================== */
+.ads_starmove .meta .ulabel { font-size: 22px; }
+.ads_starmove .pill_box { gap: 14px; padding: 25px 15px; }
+
+/* ====================== 프로젝트 // 별 기부 팝업 ====================== */
+.ads_stardonation .meta .ulabel { font-size: 22px; }
+
+/* ====================== 프로젝트 // 상품 추가 리스트 ====================== */
+
+/* ================== 상품 // 상품 리스트 =================== */
+.ads_p_text { font-size: 16px; }
+.ads_Plist .c_con_card_text { font-weight: normal; }
+
+/* ================== 상품 // 상품 상세 페이지 =================== */
+.ads_Plist_detail .angel_ads_grid .angel_ads_gridbox .angel_ads_grid_title {
+    flex-direction: row; justify-content: space-between;
+}
+.ads_Plist_detail .angel_ads_grid { grid-template-columns: auto; }
+
+/* ============= 상품 // 상품 상세 페이지 => 상품 추가 팝업 ============== */
+.Pdetail_add { height: 350px; margin:20px auto;  }
+.Pdetail_add::-webkit-scrollbar { width: 4px; }
+.Pdetail_add::-webkit-scrollbar-track { background: transparent; }
+.Pdetail_add::-webkit-scrollbar-thumb { background: #eeeeee; border-radius: 10px; }
+.Pdetail_add::-webkit-scrollbar-thumb:hover { background: #d2d2d2 ; }
+.Pdetail_add_list .Plist { gap:15px }
+.Pdetail_add_list .Plist .Plist_thumb { width:60px }
+.Pdetail_add_list .Plist .Plist_con { font-size: 17px; }
+
+
+
+/* ======================== 애즈맵 ======================== */
+.a_map_search .a_map_btn { gap: 10px; }
+.Pdetail_add_list .Plist .Plist_con { padding: 7px 13px; }
+
+/* ======================== 인증샷 메인 ======================== */
+.ads_certified_top { margin: 30px auto; }
+.m_ads_certified { margin: 0 auto 40px;}
+.m_ads_certified .empty_state { margin: 40px auto; }
+
+/* ======================== 인증샷 // 리드면 ======================== */
+.ads_certified_read .angel_ads_grid { grid-template-columns: auto }
+.ads_certified_read .angel_ads_grid .angel_ads_grid_title { flex-direction: row;}
+.ads_certified_read .angel_ads_grid .angel_ads_gridbox .angel_ads_grid_title { display: flex; flex-direction: row; gap: 5px }
+
+/* ======================== 프로젝트 // 만들기 폼 ======================== */
+.mcbox span { font-size: 16px; }
+.ads_project_form .field .field_label { font-size: 20px; }
+.af_banner span { font-size: 17px; }
+.af_tbox ul li, .af_agree ul li { font-size: 15px; }
+.af_agree { margin-bottom: 20px;}
+.af_tbox span { font-size: 14px; }
+
+
+/* ======================== 애즈닷 // 이용가이드 ======================== */
+
+
+}
+
+
+
+
+/* ******************** 데스크탑 영역 ******************** */
+/* ============= Tablet & Desktop Device ============= */
+@media all and (min-width:768px) {
+
+/* ============= base 250917 영주 ============= */
+
+/* ================== 애즈닷 홈 ====================== */
+/* ===== 상단 배너 슬라이드 ===== */
+.ads_ad.mainad { margin: 0 }
+.ads_ad .swiper-pagination { bottom:20px }
+
+/* 애즈닷 홈 // 버튼 */
+.m_ads_btn { gap:15px }
+.search_bar { padding: 15px 10px; }
+.search_input { font-size:18px }
+.search_bar .btn_icon { width:38px }
+.search_bar .btn_icon img { width: 25px; }
+
+/* ===== 핫 프로젝트 슬라이드 ===== */
+.m_ads_hot { margin:40px auto }
+.m_ads_hot .TitleL { font-size:24px; margin: 60px auto 20px; }
+.m_ads_hot_track { padding:0 20px }
+.m_ads_hot_item { flex: 0 0 55%; gap: 20px; }
+.m_ads_hot_info .p_title { font-size: 22px; margin: 20px 0 10px; }
+.m_ads_hot_info .period { font-size:16px }
+.m_ads_hot_info .star_count { font-size:22px }
+.m_ads_hot_info .star_count.rainbow { background-size: 24px; padding-left: 30px; }
+
+/* ===== 애즈닷 메인 // 인증샷 갤러리 ===== */
+.ads_gallery { column-gap: 20px; margin:20px auto 40px}
+.ads_gallery li { margin-bottom:20px }
+
+/* ===== 애즈닷 메인 // 인증샷 선택시 팝업 ===== */
+.ads_certified_gridbox .ptalk_report button.download { background-size: 20px; }
+.ads_certified_gridbox .ptalk_report { inset: 20px 15px; }
+
+
+/* ================== 애즈닷 상품 리스트 ================== */
+/* 애즈닷  // 상품 추가 - 상품 리스트 (컨텐츠 박스) */
+.ads_p_body { align-content: flex-start; }
+.ads_p_rating { font-size:16px }
+.ads_p_text { font-size: 16px; }
+.ads_pdt .ads_p_text { margin-bottom: 40px; }
+.ads_p_price { font-size: 20px; }
+
+
+/* ================== 애즈닷 현금가 구매 페이지 ================== */
+.ads_cashbox { padding: 40px 30px; }
+.ads_cashbox .TitleS { font-size:22px }
+.ads_cashbox .ads_cashbox_txt { padding: 30px; gap:30px }
+.ads_cashbox .ads_cashbox_txt .TitleXXS { font-size:20px }
+.li_ttl { font-size: 18px; padding-left: 10px; }
+.ex_txt { font-size: 15px; }
+.li_ttl::before { top: .25em; }
+.ads_cashbox .btn_m_100 { margin-top:30px}
+
+
+/* ================== 애즈닷 상품 검색 // 탭 ================== */
+.ads_searchTab { gap:20px; margin-top:40px }
+.ads_searchTab .c_con_list .c_con_grid { gap: 30px 20px; }
+#panel_aproject { margin-bottom: 50px; }
+/* 광고상품 탭 // 필터 버튼 */
+.filter_wrap .icon_svg { flex: 1; }
+.filter_wrap .icon_svg img { width:30px; height: 30px; }
+.btn_filter { flex: 2; justify-content: space-between; font-size:16px; padding: 10px; }
+
+/* === 광고상품 탭 // 검색 결과 == */
+.ads_aresult .f_checkbox .f_label { font-size:20px }
+.ads_aresult .ads_pdt { grid-template-columns: 25% 1fr; }
+.ads_aresult .ads_p_price { position:absolute; left:0; bottom:0}
+
+
+/* ======================== 검색 필터 페이지 ======================== */
+.f_section { padding:35px 0 }
+.f_title { font-weight: 700; font-size:20px;  margin: 0 0 20px }
+.filter_sheet .chip { padding: 10px 20px; font-size: 17px;;}
+.range_scale { font-size:15px; margin-top: 10px; }
+#area_rainbow { height: 7px; }
+#area_rainbow::before, #area_rainbow::after { width: 20px; height: 20px; margin-top: -11px; }
+input[type="range"]::-webkit-slider-thumb { width:24px; height: 24px; }
+
+
+/* ======================== 프로젝트 탭 // 메인 ======================== */
+/* 프로젝트 만들기 버튼 */
+.m_ads_btn .ads_newbtn { width:50px; height: 50px; line-height: 50px; }
+.m_ads_btn .btn { gap:20px }
+.m_ads_btn .ads_newbtn::before { font-size:40px }
+/* 컨텐츠 정렬// 오른쪽 정렬일때 c_more 추가 */
+.c_more { margin-bottom:10px }
+
+
+/* ======================== 프로젝트 // 리드면 ======================== */
+/* 프로젝트 설명 섹션 */
+.ads_project_read .card_wide .c_conthumb { aspect-ratio: 14 / 8; }
+.starcard_title .TitleM { font-size:22px }
+.ads_project_read .starcard_price { font-size: 22px; padding-left: 26px; background-size: 23px; }
+.ads_p_date .datebox { font-size: 15px }
+.ads_p_date .date { font-size: 16px }
+.ads_p_id .p_text { font-size: 18px; }
+.ads_project_read .ads_p_date { margin-bottom: 14px; }
+
+/* ======= 프로젝트 리드면 // 하단 탭 ======= */
+.tabs_wrap { margin:0 auto 40px }
+.tabs_wrap .tabs_bar .tab2 { font-size: 18px; }
+.tabs_wrap .panels { margin:40px auto }
+#aproject_guide, #aproject_reply, #aproject_notice { margin:0 auto 50px
+}
+.ads_starmove .pill_box { gap: 14px; }
+
+/* ==== 탭 // 광고상품 ==== */
+.ads_project_read .tabs_wrap .angel_ads_grid { margin:30px auto 0 }
+.ads_fbox { margin:40px auto; font-size:18px; }
+.angel_ads_grid .angel_ads_grid_title { align-items: flex-start; }
+
+/* ==== 탭 // 이용가이드 ==== */
+#aproject_guide .list_text { margin:30px 0 }
+#aproject_guide .list_text .ads_fguide { font-size:18px }
+#aproject_guide .box_contents ul li { font-size:16px }
+#aproject_guide .list_text .fguide_ex { display: block; font-size: 15px; }
+
+/* ==== 탭 // 인증샷 ==== */
+#aproject_guide .m_ads_certified { margin:30px auto }
+.ads_starmove .meta .ulabel, .ads_stardonation .meta .ulabel { font-size:22px }
+
+
+/* ==== 탭 // 공지사항 ==== */
+.pj_notice_wrap { margin:30px 0; gap:15px }
+.pj_acc_btn { gap:15px; padding: 20px 25px 20px 20px; }
+.pj_acc_title { font-size:17px }
+.pj_acc_inner .pj_acc_inner_txt { padding:20px;  font-size:16px }
+.pj_acc_btn .icon_arrow::after { width:10px; height: 10px;}
+
+/* ==== 인증샷 올리기 폼 ==== */
+.certified_write { padding: 30px 0; }
+.rec_form { gap:20px }
+.certified_write .angel_ads_grid { grid-template-columns:auto; }
+
+/* ==== 프로젝트 종료후 해당 상품 인증샷 올리기 폼 ==== */
+.certified_write .angel_ads_grid { grid-template-columns: auto; } 
+.certified_write .angel_ads_grid .angel_ads_thumb { aspect-ratio: 3 / 2; }
+.certified_write .angel_ads_grid .angel_ads_grid_title { margin: 20px 0 0; flex-direction: row; }
+.certified_write .angel_ads_grid .angel_ads_grid_title .TitleS { height: auto; }
+.certified_write .angel_ads_grid .angel_ads_grid_title .ads_p_price { font-size: 22px;}
+.certified_write .angel_ads_grid .ads_p_date { margin: 14px 0 0 0;}
+
+
+/* ================== 상품 // 상품 리스트 =================== */
+.ads_Plist { margin:30px auto 40px }
+.ads_Plist .c_con_card_text { font-weight: normal; }
+
+/* ================== 상품 // 상품 상세 페이지 =================== */
+.ads_Plist_detail .angel_ads_grid .angel_ads_gridbox .angel_ads_grid_title {
+    flex-direction: row; justify-content: space-between;
+}
+.ads_Plist_detail .angel_ads_grid { grid-template-columns: auto; }
+.ads_Plist_detail .angel_ads_grid .angel_ads_thumb { aspect-ratio: 3 / 2;}
+
+
+/* ============= 상품 // 상품 상세 페이지 => 상품 추가 팝업 ============== */
+.Pdetail_add { height: 350px; margin:20px auto;  }
+.Pdetail_add::-webkit-scrollbar { width: 4px; }
+.Pdetail_add::-webkit-scrollbar-track { background: transparent; }
+.Pdetail_add::-webkit-scrollbar-thumb { background: #eeeeee; border-radius: 10px; }
+.Pdetail_add::-webkit-scrollbar-thumb:hover { background: #d2d2d2 ; }
+.Pdetail_add_list .Plist { gap:15px }
+.Pdetail_add_list .Plist .Plist_thumb { width:60px }
+.Pdetail_add_list .Plist .Plist_con { font-size: 17px; }
+
+
+/* ======================== 애즈맵 ======================== */
+.a_map_search .a_map_btn { gap:10px }
+.a_map_search .btn_pill { padding: 8px 15px; }
+.a_map_search .btn_pill img { width:17px }
+.a_map .a_map_pin img { width:40px }
+.a_map .a_map_pin span { font-size: 14px; padding: 2px 8px; }
+
+/* ======================== 인증샷 메인 ======================== */
+.ads_certified_top { margin:30px auto }
+.m_ads_certified { margin: 0 auto 40px;}
+.m_ads_certified .empty_state { margin:30px auto }
+
+/* ======================== 인증샷 // 리드면 ======================== */
+.ads_certified_read .angel_ads_grid {
+    grid-template-columns: none;
+}
+.ads_certified_read .angel_ads_grid .angel_ads_gridbox .angel_ads_grid_title { display: flex; flex-direction: row; gap: 5px }
+
+/* ====================== 프로젝트 // 만들기 폼 ====================== */
+.mcbox { width:94%; margin:0 auto; border-radius:var(--r_md);}
+.mcbox span { font-size:16px }
+.ads_project_form { margin: 40px auto; }
+.ads_project_form .field { gap:15px }
+.ads_project_form .field .field_label { font-size:18px }
+.ads_project_form .af_title { font-size:17px }
+.af_country .af_country_box { padding: 25px 20px; }
+.ads_project_form textarea { min-height: 130px; }
+.af_file { display: flex; gap:10px; justify-content: space-between; align-items: center; width:100% }
+.af_file .af_banner { flex: 1 }
+.af_file .af_banner span { color:var(--main); font-size: 14px; }
+.af_file .af_pimage { flex: 2; flex-direction: column; display: flex; gap: 10px; margin:0}
+.af_file .af_title { flex: 1;}
+.af_custom_c { padding: 25px 20px; }
+.af_tbox { padding: 25px 20px; }
+.af_tbox h4 { font-size:18px }
+.af_tbox ul li { font-size:16px }
+.af_tbox span { font-size:14px }
+.af_agree { padding: 15px 20px; }
+.af_agree ul li { font-size: 16px; }
+
+/* ======================== 애즈닷 // 이용가이드 ======================== */
+.ads_g_top { padding: 30px 20px }
+.ads_g_process { margin: 30px auto; }
+.ads_g_top span { font-size: 17px; }
+.g_process_box { padding: 25px 20px; }
+.process_item .tl_title{ font-size: 17px; }
+.process_list::before { top:-3px }
+}

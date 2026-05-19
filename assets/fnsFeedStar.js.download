@@ -1,0 +1,125 @@
+class feedStarHandel {
+
+    constructor(obj){
+        this.idx = obj.idx;
+        this.boardType = obj.boardType;
+        this.targetElement = document.querySelector('.floating_top_btns');
+        this.secondText = 20;
+        this.intervalId = null;
+
+        this.pageMessage = {
+            success:{
+                kr:"일반별 [0]개가 적립됐습니다.",
+                jp:"普通星 [0] チャージ完了",
+                cn:"已累积 [0] 颗普通星。",
+                en:"[0] Regular Star(s) have been credited."
+            }
+        }
+
+        this.check();
+    }
+
+    addAction = async() => {
+        const formData = new FormData;
+        
+        formData.append("boardType",this.boardType);
+        formData.append("Idx",this.idx);
+        formData.append("ActionType","homefeed");
+
+        const response = await fetch('/api/addactions',
+            {
+                method:'POST',
+                body:formData
+            }
+        );
+        
+        if(!response.ok){
+            console.log('network fail');
+            return false;
+        }
+        
+        const data = await response.json();
+
+
+        if(data.res == 0){
+            setTimeout(() => {
+                this.targetElement.querySelector('.feedstar_Lbtn').classList.add('hidden');
+            }, 2000);
+
+            if (typeof customAlert === "function") {
+
+                let message = this.pageMessage.success[langs];
+                message = message.replace("[0]",data.point);
+
+                customAlert({
+                    Layouts : {
+                        Title : "N", 
+                        Close : "N"
+                    },
+                    Message:message,
+                    Code:langs
+                });
+            }
+        }
+
+    }
+
+
+    check = async() => {
+
+        const formData = new FormData;
+
+        formData.append("boardType",this.boardType);
+        formData.append("Idx",this.idx);
+        formData.append("ActionType","homefeed");
+
+        const response = await fetch('/api/checkhomefeed',
+            {
+                method:'POST',
+                body:formData
+            }
+        );
+
+
+        if(!response.ok){
+            console.log('network fail');
+            return false;
+        }
+        
+        const data = await response.json();
+
+        console.log(data);
+
+        if(data.result == 0){
+            this.targetElement.querySelector('.feedstar_Lbtn').classList.remove('hidden');
+            this.onProgress();
+        }
+
+    }
+
+    onProgress(){
+        this.targetElement.querySelector('svg circle:nth-of-type(2)').classList.add('progress');
+
+        this.intervalId = setInterval(() => {
+            this.secondText--;
+            this.targetElement.querySelector('.btn_txt').innerHTML = this.secondText;
+            if(this.secondText == 0){
+                clearInterval(this.intervalId);
+                this.targetElement.querySelector('.feedstar_Lbtn').classList.add('is_done');
+                this.addAction();
+            }
+        }, 1000);
+    }
+}
+
+
+if(document.querySelector('.page_up_btn')){
+    document.querySelector('.page_up_btn').addEventListener('click',(e)=>{
+        e.preventDefault();
+        
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}

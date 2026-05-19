@@ -1,0 +1,148 @@
+/**
+ * 광고 클릭 후 이벤트가 필요한 경우 사용(예: 광고 클릭하면 별주기)
+ * @history
+ * 
+ */
+
+
+    const iframeTrackerv3 = () => {
+
+        console.log('[INFO]모바일에서 광고 클릭 감지는 실제 디바이스에서만 작동');
+
+        let inner = 0;
+        let load = 0;
+        let maxCheck = 10;
+        let countCheck = 1;
+        let handeler = null;
+
+        let tmpData = {
+            flag:"",
+            contentsIdx:"",
+            boardtype:""
+        }
+
+        const pageMessages = {
+            point:{
+                kr: "일반별 [0]개가 지급되었습니다.",
+                cn: "已发放普通星 [0]个。",
+                jp: "普通星 [0]個が付与されました。",
+                en: "[0] Regular Stars have been credited."
+            }
+        }
+
+        
+
+        const setVirturalElement = () => {
+            if(document.querySelectorAll('#iframeTrackerFocus').length == 0){
+                document.body.insertAdjacentHTML("afterbegin","<input id='iframeTrackerFocus' type='text' style='opacity:0; width:0; height:0; position:fixed; top:0px; left:0;'>");
+            }
+        }
+
+        const addAction = async() => {
+
+            const formData = new FormData;
+
+            formData.append("boardType",tmpData.boardtype);
+            formData.append("Idx",tmpData.contentsIdx);
+            formData.append("ActionType",tmpData.flag);
+
+            const response = await fetch('/api/addactions',
+                {
+                    method:'POST',
+                    body:formData
+                }
+            );
+            
+            if(!response.ok){
+                console.log('network fail');
+                return false;
+            }
+            
+            const data = await response.json();
+
+            let message = data.message;
+
+            if(data.point){
+                message = pageMessages.point[langs].replace("[0]",data.point);
+            }
+
+            customAlert({
+                Layouts : {
+                    Title : "N", 
+                    Close : "N"
+                },
+                Message:message,
+                Code:langs
+            });
+
+        }
+
+        const observer = () => {
+            document.querySelector('#iframeTrackerFocus').addEventListener("blur",()=>{
+                if(tmpData.flag == "" || tmpData.contentsIdx == "" || tmpData.boardtype == ""){
+                    return false;
+                }
+
+                if(inner == 0) return false;
+
+                addAction();
+
+            });
+        }
+
+        const init = () =>{
+
+            if(document.querySelectorAll('.iframeTracker').length == 0){
+                return false;
+            }
+
+            load = 1;
+
+            setVirturalElement();
+
+
+            document.querySelectorAll('.iframeTracker').forEach(ele => {
+                
+                ele.addEventListener('mouseenter',(e)=>{
+                    e.preventDefault();
+                    inner = 1;
+                    tmpData.flag = e.target.closest('.iframeTracker').dataset.flag;
+                    tmpData.contentsIdx = e.target.closest('.iframeTracker').dataset.contentsidx;
+                    tmpData.boardtype = e.target.closest('.iframeTracker').dataset.boardtype;
+                    document.querySelector('#iframeTrackerFocus').focus();
+                });
+
+                ele.addEventListener('mouseleave',(e)=>{
+                    e.preventDefault();
+                    inner = 0;
+                    document.querySelector('#iframeTrackerFocus').blur();
+                });
+
+            });
+
+            observer();
+        }
+
+
+        const adLoad = () =>{
+
+            if(load == 1 || maxCheck == countCheck){
+                clearInterval(handeler);
+                return;
+            }
+
+            init();
+
+            countCheck++;
+
+        }
+        
+        handeler = setInterval(adLoad(),500);
+
+    }
+
+
+    iframeTrackerv3();
+
+
+   

@@ -1,0 +1,510 @@
+/* IE 콘솔  ver 21.04.26 */
+if(typeof(window.console) == 'undefined') {console = { log: function () { } }; }
+
+/* 포인정보 모듈 */
+(function () {
+	/*이미 존재하는지 확인 */
+	if (typeof(window.foin_cookie) != 'undefined') return;
+	foin_cookie = new Object();
+	foin_cookie.obj = function (set) {
+		this.setting = set;
+	};
+
+
+	/**************************************************************************/
+	/***  html 5                                                           ****/
+	/**************************************************************************/
+	foin_cookie.obj.prototype.isHtml5 = function ()
+	{
+		var rtnVal=false;
+		try
+		{
+			if (typeof(Storage) != "undefined")
+			{
+			  rtnVal=true;
+			}
+			else
+			{
+				rtnVal=false;
+			}
+		}
+		catch(e)
+		{
+			console.log('isHtml5 error : '+e.message);
+			rtnVal=false;
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.setHtml5 = function (key,val)
+	{
+		var rtnVal=false;
+		try
+		{
+			if(typeof(key)=='undefined' || key.length<1)
+			{
+				rtnVal=false;
+			}
+			else
+			{
+				localStorage.setItem(key,val);
+				rtnVal=true;
+			}
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('setHtml5 error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.getHtml5 = function (key)
+	{
+		var rtnVal=null;
+
+		try
+		{
+			if(typeof(key)=='undefined' || key.length<1)
+			{
+				rtnVal=null;
+			}
+			else
+			{
+				rtnVal = localStorage.getItem(key);
+			}
+		}
+		catch(e)
+		{
+			rtnVal=null;
+			console.log('getHtml5 error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.removeHtml5 = function (key)
+	{
+		var rtnVal=false;
+
+		try
+		{
+			if(typeof(key)=='undefined' || key.length<1)
+			{
+				rtnVal=false;
+			}
+			else
+			{
+				localStorage.removeItem(key);
+				rtnVal=true;
+			}
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('clearHtml5 error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	/**************************************************************************/
+	/***  Cookie                                                           ****/
+	/**************************************************************************/
+	foin_cookie.obj.prototype.setCookie = function (key,val,exdays)
+	{
+		var rtnVal=false;
+		if(typeof(key)=='undefined' || key.length<1) return false;
+		if(typeof(exdays)=='undefined' || exdays.length<1) exdays=365;
+		try
+		{
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = key + "=" + val + "; " + expires+"; path=/";
+		rtnVal=true;
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('setCookie error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.getCookie = function (key)
+	{
+		var rtnVal=null;
+		if(typeof(key)=='undefined' || key.length<1) return null;
+		try
+		{
+			var name = key + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; rtnVal==null && i <ca.length; i++)
+			{
+				var c = ca[i];
+				while (c.charAt(0)==' ')
+				{
+					c = c.substring(1);
+				}
+				if (c.indexOf(name) == 0)
+				{
+					rtnVal = c.substring(name.length,c.length);
+					break;
+				}
+			}
+			return rtnVal;
+		}
+		catch(e)
+		{
+			rtnVal=null;
+			console.log('getCookie error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.removeCookie = function (key)
+	{
+		var rtnVal=false;
+		var val="empty";
+		if(typeof(key)=='undefined' || key.length<1) return false;
+		try
+		{
+			var d = new Date();
+			d.setTime(d.getTime() - 1000);
+			var expires = "expires="+ d.toUTCString();
+			document.cookie = key + "=" + val + "; " + expires;
+			rtnVal=true;
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('removeCookie error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	/**************************************************************************/
+	/***  Keyword Procedure                                                ****/
+	/**************************************************************************/
+	foin_cookie.obj.prototype.setKeyword_local = function (rtnInfo)
+	{
+		var rtnVal=false;
+		try
+		{
+			if(typeof(this.setting.live_keyword)=='undefined') this.setting.live_keyword="";
+			if(this.setting.live_keyword==rtnInfo) return true;
+			this.setting.live_keyword=rtnInfo;
+			if(foinCookie.isHtml5()==true)
+			{
+				foinCookie.setHtml5("FOIN_KEYWORD",rtnInfo);
+			}
+			foinCookie.setCookie("FOIN_KEYWORD1",rtnInfo,30);
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('setKeyword_local error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.setKeyword_global = function (keyword)
+	{
+		var rtnVal=false;
+		if(typeof(keyword)=='undefined' || keyword==null || keyword.length<1) return;
+		var setting=this.setting;
+		try
+		{
+			var l_date = new Date();
+			var l_url=setting.refServerUrl+"?servicename=KEYWORD&keyword="+keyword+"&tm="+l_date.getTime()+"&jquerycallback=foinCookie.setKeyword_local";
+			var l_Head = document.getElementsByTagName('HEAD')[0];
+			if(typeof(l_Head)=='undefined') l_Head = document.getElementsByTagName('BODY')[0];
+			var scrObj=document.createElement('SCRIPT');
+			scrObj.type = 'text/javascript';
+			scrObj.async = true;
+			scrObj.defer = true;
+			scrObj.src = l_url;
+			l_Head.appendChild(scrObj);
+			rtnVal=true;
+		}
+		catch(e)
+		{
+			rtnVal=false;
+			console.log('setKeyword_global error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	/**************************************************************************/
+	/***  Referer  Procedure                                              ****/
+	/**************************************************************************/
+	foin_cookie.obj.prototype.is_adUrl = function (url)
+	{
+		if(url.indexOf("cgi-bin")>=0
+		 || url.indexOf("//ad.")>=0
+		 || url.indexOf("compass.adop.cc")>=0
+		 || url.indexOf("adex.adux.kr")>=0
+		 || url.indexOf("RealMedia")>=0
+		 || url.indexOf("mtab.clickmon.co.kr")>=0
+		 || url.indexOf(".mrep.kr")>=0
+		 || url.indexOf("adx-exchange")>=0
+		 || url.indexOf("ad89")>=0
+		 || url.indexOf("//adex.")>=0
+		 || url.indexOf(".linkprice.")>=0
+		 || url.indexOf("img.")>=0
+		 || url.indexOf("a.wyzmob.com")>=0
+		 || url.indexOf("ad4989")>=0
+		 || url.indexOf("google")>=0
+		 || url.indexOf("ad.imp")>=0
+		 || url.indexOf("//adbiz")>=0
+		 || url.indexOf("adex.")>=0
+		 || url.indexOf("criteo")>=0
+		 || url.indexOf("imadrep")>=0
+		 || url.indexOf("adplex")>=0
+		 || url.indexOf("doubleclick")>=0
+		 || url.indexOf("adbinead")>=0
+		 || url.indexOf("mediacategory")>=0
+		 || url.indexOf("catad5959")>=0
+		 || url.indexOf("widerplanet")>=0
+		 || url.indexOf("wisenut")>=0
+		 || url.indexOf(".popin.")>=0
+		 || url.indexOf(".dable.")>=0
+		 || url.indexOf(".igaw.")>=0
+		 || url.indexOf(".tpmn.")>=0
+		 || url.indexOf(".3dpop.")>=0
+		 || url.indexOf("interworksmedia")>=0
+		 || url.indexOf(".adop.")>=0
+		 || url.indexOf(".digitalcamp.")>=0
+		 || url.indexOf(".about.")>=0
+		 || url.indexOf(".realclick.")>=0
+		 || url.indexOf(".netinsight.")>=0
+		 || url.indexOf(".acrosspf.")>=0
+		 || url.indexOf(".daumcdn.")>=0
+		 || url.indexOf(".piclick.")>=0
+		) return true;
+		else return false;
+	}
+
+	foin_cookie.obj.prototype.getRefer = function ()
+	{
+		let rtnVal=null;
+		try
+		{
+			let nowUrl=location.href;
+			let preUrl=document.referrer;
+			
+			/* 현재의 URL을 사용할지 여부 */
+			if(foinCookie.is_adUrl(nowUrl)==false)
+			{
+				let urlinfo = new URL(nowUrl);
+				let urllen = (urlinfo.pathname + urlinfo.search).length;
+				if(urllen>5)	preUrl = nowUrl;
+			}
+			
+			/* REFFER 이 광고 시스템 호출 URL이면 무시함 */
+			if(foinCookie.is_adUrl(preUrl)==true)
+			{
+				preUrl = "";
+			}
+			else
+			{
+				let urlinfo = new URL(preUrl);
+				let urllen = (urlinfo.pathname + urlinfo.search).length;
+				if(urllen<=5)	preUrl = "";			
+			}
+		
+			if(typeof(preUrl)=='undefined' || preUrl==null || preUrl.length<1)
+			{
+				rtnVal=null;
+			}
+			else
+			{
+				rtnVal = preUrl;
+			}
+		}
+		catch(e)
+		{
+			rtnVal=null;
+			console.log('getRefer error : '+e.message);
+		}
+		return rtnVal;
+	};
+
+	foin_cookie.obj.prototype.setReferrer_local = function (rtnInfo)
+	{
+		try
+		{
+			if(typeof(this.setting.live_ref)=='undefined') this.setting.live_ref="";
+			if(this.setting.live_ref==rtnInfo) return ;
+			this.setting.live_ref=rtnInfo;
+			if(foinCookie.isHtml5()==true)
+			{
+				foinCookie.setHtml5("FOIN_CATEGORY",rtnInfo);
+			}
+			foinCookie.setCookie("FOIN_CATEGORY1",rtnInfo,30);
+		}
+		catch(e)
+		{
+			console.log('setReferrer_local error : '+e.message);
+		}
+		return;
+	};
+
+	foin_cookie.obj.prototype.setReferrer_global = function (ref,title,summary,lang)
+	{
+		if(typeof(ref)=='undefined' || ref==null || ref.length<1) return;
+		if(typeof(title)=='undefined' || title==null) title="";
+		if(typeof(summary)=='undefined' || summary==null) summary="";
+		if(typeof(lang)=='undefined' || lang==null) lang="";
+		var setting=this.setting;
+		try
+		{
+			var l_date = new Date();
+			var l_cookieVal = foinCookie.getHtml5("FOIN_CATEGORY");
+			if(l_cookieVal==null) l_cookieVal ="";
+			var l_url=setting.refServerUrl+"?servicename=REF&ref="+ref+"&title="+title+"&summary="+summary+"&lang="+lang+"&cookieval="+l_cookieVal+"&tm="+l_date.getTime()+"&jquerycallback=foinCookie.setReferrer_local";
+			var l_Head = document.getElementsByTagName('HEAD')[0];
+			if(typeof(l_Head)=='undefined') l_Head = document.getElementsByTagName('BODY')[0];
+			var scrObj=document.createElement('SCRIPT');
+			scrObj.type = 'text/javascript';
+			scrObj.async = true;
+			scrObj.defer = true;
+			scrObj.src = l_url;
+			l_Head.appendChild(scrObj);
+		}
+		catch(e)
+		{
+			console.log('setReferrer_global error : '+e.message);
+		}
+	};
+	
+	foin_cookie.obj.prototype.sendPost = function(url, data, success, fail) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader(
+        "Content-Type",
+        "application/json;charset=UTF-8"
+    );
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                success(xhr.responseText);
+            } else {
+                if (fail) fail(xhr.status);
+            }
+        }
+    };
+
+    xhr.send(JSON.stringify(data));
+	};
+	
+	foin_cookie.obj.prototype.sendUrl = function(sendbody) 
+	{
+			if (typeof(sendbody) == "undefined") sendbody = "n";
+			
+			/* referrer*/
+			let refVal=this.getRefer();
+			let useRef = true;
+			let params;
+			
+			if(sendbody != "y")
+			{
+				if(refVal != null && refVal.length > 0 )
+				{
+					let old_refVal = this.getHtml5("FOIN_REF");
+					if(sendbody != "y" && refVal == old_refVal) useRef = false;
+					if(useRef==true)
+					{
+						if(foinCookie.isHtml5()==true) foinCookie.setHtml5("FOIN_REF",refVal);
+					}
+				}
+				else useRef = false;
+			}
+/*임시*/
+//console.log("useRef:"+useRef);
+//console.log("refVal:"+refVal);
+			/* data send */
+			if(useRef==true)
+			{
+				try
+				{
+					if(sendbody=="y")
+					{
+						params = {
+						  b0: location.href,
+						  b1: document.referrer,
+						  ref: refVal,
+						  sendbody: "y",
+						  body: document.documentElement.outerHTML
+						};
+					}
+					else
+					{		    
+				    params = {
+						  b0: location.href,
+						  b1: document.referrer,
+						  ref: refVal,
+						  sendbody: "n",
+						  body: ""
+						};
+					}
+
+					this.sendPost(
+					    this.setting.refServerUrl,
+					    params,
+					    function (res) {
+					        var json = JSON.parse(res);
+					        if(json.sendbody=="y")
+					        {
+					        	console.log(json);
+					        	setTimeout(function () {
+  										foinCookie.sendUrl("y");
+										}, 3000);
+					        }
+					        else
+					        {
+					        	console.log(json);
+					        }
+					    },
+					    function (status) {
+					        console.log("AJAX ERROR", status);
+					    }
+					);
+				}
+				catch(e)
+				{
+					console.log('sendUrl error : '+e.message);
+				}
+			}		
+	};
+
+})();
+try
+{
+		if (typeof window.foinCookie === "undefined") 
+		{
+			if(typeof(foin_cookie_setting)!=='undefined' && foin_cookie_setting.slotNum!=='undefined' && foin_cookie_setting.slotNum.length<1)
+			{
+				var l3_date = new Date();
+				if((l3_date.getTime() % 100)>=0)
+				{
+					window.foinCookie = new foin_cookie.obj(foin_cookie_setting);
+					if (document.readyState === "loading")
+					{
+						document.addEventListener("DOMContentLoaded", () => {
+						  foinCookie.sendUrl("n");
+						});		
+					}
+					else
+					{
+						  foinCookie.sendUrl("n");
+					}
+				}
+			}
+		}
+			
+}
+catch(e)
+{
+	console.log(e.message);
+};

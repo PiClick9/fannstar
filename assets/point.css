@@ -1,0 +1,1398 @@
+@charset "UTF-8";
+/* ============= base 251128 영주 ============= */
+
+/* ================== 포인트 홈 ====================== */
+.point_m_wrap {
+    width:100%; margin:0 auto; padding:20px 0 20px; background:#F5F6FA; min-height: 100vh;
+}
+/* 포인트 홈 상단 탭 */
+.point_m_wrap .p_tab_nav {
+    width:94%; margin:0 auto; display:flex; background:#ffffff; border-radius:999px; padding:4px; align-items: center; gap: 2px;
+}
+.point_m_wrap .p_tab_item {
+    flex:1; text-align:center; font-size:16px; padding:12px 3px; border-radius:999px; cursor:pointer; transition:.2s; 
+    overflow: hidden; text-overflow: ellipsis;white-space:nowrap; font-weight: 600; vertical-align: middle; display: flex; gap:2px; justify-content: center; align-items: center;
+}
+.point_m_wrap .p_tab_item img {
+    width:18px;
+}
+#tab_star:checked    ~ .p_tab_nav label[for="tab_star"],
+#tab_rainbow:checked ~ .p_tab_nav label[for="tab_rainbow"],
+#tab_gplus:checked   ~ .p_tab_nav label[for="tab_gplus"] {
+    background-color:var(--sub); color:#fff;
+}
+.point_m_wrap .point_m_tab input[type="radio"] {
+    display: none;
+}
+.point_m_wrap .p_tab_panel {
+    display:none; width:94%; margin:30px auto 0
+}
+#tab_star:checked    ~ .panel_star,
+#tab_rainbow:checked ~ .panel_rainbow,
+#tab_gplus:checked   ~ .panel_gplus {
+    display:block;
+}
+.p_tab_panel .p_tab_title {
+    display: flex; flex-direction: column; gap:5px
+}
+.p_tab_panel .p_tab_title h2 {
+    display: flex; gap: 3px; font-size: 20px; align-items: center;
+}
+.p_tab_panel .p_tab_title h2 img {
+    width:20px
+}
+.p_tab_panel .p_tab_title > span {
+    color:var(--text_sub); font-size: 17px;
+}
+/* 아이콘 그리드 */
+.p_mission_grid {
+    margin:30px auto; display:grid; grid-template-columns:repeat(3,minmax(0,1fr));gap:12px
+}
+.p_icon_btn {
+    width:100%; display:flex; flex-direction:column; align-items:center; gap:6px;
+}
+.p_icon_thumb {
+    width:100%; height:100%; display:flex; align-items:center; justify-content:center; flex-direction: column; gap:10px; border-radius: 10px; background: #ffffff; box-shadow: 0 1px 4px rgba(0, 0, 0, .05); padding: 15px 6px; min-width:0;
+}
+.p_icon_thumb img {
+    width:40%;
+}
+.p_icon_label {
+    display:block; width:100%; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; text-align:center; font-size: 14px;
+}
+.p_icon_btn, .p_icon_item {
+    min-width:0;
+}
+.p_tab_panel .g_fns_grid {
+    width:100%;
+}
+.p_tab_panel .g_fns_grid .g_fns_card {
+    background:#ffffff; min-height: 75px;
+}
+.p_tab_panel .g_fns_grid .g_fns_card .g_fns_card_txt h4 {
+    display: flex; gap:5px; align-items: center;
+}
+.p_tab_panel .g_fns_grid .g_fns_card .g_fns_card_txt h4 span {
+    background:var(--point); font-size: 10px; color:#ffffff; padding:0px 7px; display: inline-block; border-radius: 10px; font-weight: normal; height: 17px; line-height: 17px;
+}
+
+
+/* ================== 포인트 // 출석체크 ====================== */
+.point_check_wrap {
+    width:100%; padding: 0 0 40px; background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(159, 228, 231, 1) 100%);
+}
+.point_check_card {
+    width:94%; margin:30px auto 20px; background:#fff; border-radius:18px; padding:20px 12px; box-shadow:0 6px 20px rgba(0,0,0,.08); position: relative;
+}
+/* 상단 */
+.point_check_header {
+    display:flex; align-items:center; justify-content:center; gap:10px; padding:10px; border:2px solid var(--sub); border-radius:999px; font-size:17px; color:#333; position: absolute; top: -20px; left:50%;  transform: translateX(-50%); background: #ffffff; width: 90%;
+}
+.p_check_count {
+    color:var(--sub); font-weight:700;
+}
+.p_check_desc {
+    text-align:center; font-size:15px; margin:20px auto;
+}
+.p_check_desc b {
+    color:var(--main);
+}
+/* 출석 그리드 */
+.p_check_grid {
+    display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:10px 3px; width: 100%;
+}
+.p_check_item {
+    display:flex; align-items:center; justify-content:center;
+}
+.p_check_item img {
+    width:100%; aspect-ratio: 1 / 1; height: 100%; display:block; object-fit: cover; transform: scale(1.1);
+}
+.p_check_icon {
+    position:relative; width:18px; height:18px; display:inline-block;
+}
+.p_check_icon::before {
+    content:""; position:absolute; inset:0; background-repeat:no-repeat; background-position:center; background-size:contain; background-image:url("data:image/svg+xml;utf8,\<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>\<path d='M20 6L9 17l-5-5' fill='none' stroke='%238b9ffe' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/>\</svg>");
+}
+.point_check_wrap .list_text.decimallist {
+    margin:0 auto 10px; 
+}
+.point_check_wrap .list_text.decimallist li {
+    font-size: 15px;
+}
+
+
+/* ================== 뉴스 // 홈 ====================== */
+.p_news_wrap {
+    width:100%; margin:20px auto 30px; 
+}
+.p_news_wrap .p_new_top {
+    width:94%; margin: 0 auto; display: flex; flex-direction: column; gap:20px
+}
+.p_news_wrap .p_new_top .ranking_slider {
+    margin: 0; display: flex; gap: 10px; flex:0 0 90%; overflow: hidden;
+}
+/* 상단 슬라이드 */
+.p_news_wrap .news_card {
+    flex: 0 0 90%; scroll-snap-align: start; background: #fff; border-radius: 10px; min-width: 300px; background:var(--bg)
+}
+.p_news_wrap .news_card .news_link {
+    display:block; color:inherit; text-decoration:none;
+}
+.p_news_wrap .news_card .news_thumb {
+    position:relative; width:100%; aspect-ratio: 16 / 12; border-radius:10px; overflow:hidden; background:#eee;
+}
+.p_news_wrap .news_card .news_thumb img {
+    width:100%; height:100%; object-fit:cover; display:block; object-position: center 20%;
+}
+.p_news_wrap .news_card .news_thumb::after {
+    content:""; position:absolute; left:0; right:0; bottom:0; height:56%; background:linear-gradient( to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,0) 100% ); pointer-events:none;
+}
+.p_news_wrap .news_card .news_caption {
+    position:absolute; left:14px; right:14px; bottom:12px; z-index:1; color:#fff; font-size:20px; line-height:1.35; font-weight:700; text-shadow:0 2px 10px rgba(0,0,0,.35); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; text-align: left;
+}
+/* 뉴스 */
+.p_news_wrap .p_mnews_grid {
+    width:100%; margin:0 auto 30px; display: flex; flex-direction: column; gap: 20px;
+}
+.p_news_wrap .p_mnews_gridbox {
+    border-bottom: 5px solid var(--line) ;
+}
+.p_news_wrap .p_mnews_grid .p_mnews_thumb {
+display:block; aspect-ratio:16 / 9; width:100%; margin:0; position: relative;
+}
+.p_news_wrap .p_mnews_grid .p_mnews_thumb img {
+width:100%; height:100%; object-fit:cover; display:block; object-position: center 10%;
+}
+.p_news_wrap .p_mnews_grid .p_mnews_title {
+    width:94%; margin:10px auto 20px;
+}
+.p_news_wrap .p_mnews_grid .p_mnews_title .TitleS {
+    font-size: 20px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; white-space: normal;
+}
+/* 인기 기사 */
+.p_news_wrap .p_hot_news {
+    width:100%;
+}
+.p_news_wrap .p_hot_title {
+    width:94%; margin:0 auto; font-size:22px; font-weight:800;color:var(--main); border-bottom: 3px solid var(--main); padding-bottom: 7px;
+}
+.p_news_wrap .p_hot_item {
+    border-top:1px solid #ededed;
+}
+.p_news_wrap .p_hot_item:first-child {
+    border-top:0;
+}
+.p_news_wrap .p_hot_link {
+    display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px;
+}
+.p_news_wrap .p_hot_txt {
+    margin:0; flex:1; font-size:18px; font-weight:700; line-height:1.35; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; color: var(--title);
+}
+.p_news_wrap .p_hot_thumb {
+    flex:0 0 64px; width:64px; height:64px; overflow:hidden;
+}
+.p_news_wrap .p_hot_thumb img {
+    width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;
+}
+
+
+/* =================  뉴스 // 섹션 리스트 =================== */
+.p_news_wrap .p_newslist {
+    margin: 20px auto; background:#ffffff;
+}
+.p_news_wrap .p_newslist .p_mnews_gridbox {
+    border-bottom:1px solid var(--line)
+}
+.p_news_wrap .p_newslist .p_mnews_grid {
+    margin-bottom: 0;
+}
+.p_news_wrap .p_mnews_small {
+    border-bottom: 1px solid var(--line);
+}
+.p_news_wrap .p_mnews_small .p_hot_link {
+    width:94%; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:20px 0
+}
+.p_news_wrap .p_mnews_small .p_hot_txt {
+    margin:0; flex:1; font-size:17px; font-weight:700; line-height:1.25; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; color: var(--title);
+}
+.p_news_wrap .p_mnews_small .p_hot_thumb {
+    flex:0 0 100px; width:100px; height:60px; overflow:hidden; position: relative
+}
+.p_news_wrap .p_mnews_small .p_hot_thumb img {
+    width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;
+}
+.news_overlay {
+    position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; color: #fff; font-size:18px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; z-index: 6;
+}
+/* 260515 해외판 안내 문구 */
+.p_top_mtxt {
+    display: flex; gap: 5px; align-items:flex-start; width: 94%; margin: 0 auto 10px;
+}
+.p_top_mtxt p {
+    background:var(--main); color:#ffffff; padding: 3px 5px; border-radius: 3px; font-size: 13px; line-height: 1; flex:0 0 auto;
+}
+.p_top_mtxt span {
+    font-size: 15px; line-height:1.35; flex:1; min-width:0;
+}
+
+/* ================= 뉴스 // 검색 결과 =================== */
+.p_news_wrap .p_news_result {
+    width: 94%; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; margin-top: 30px;
+
+}
+.p_news_wrap .p_news_result .c_con_grid {
+    gap: 15px 12px;
+}
+.p_news_wrap .p_news_result .c_con_card_text {
+    font-size: 17px; margin-top: 8px; max-height: 100%; line-height: 1.25;
+}
+/* 사파리 이미지 크기 버그 */
+.p_news_wrap .c_con_card .c_conthumb {
+    aspect-ratio: 1 / 1; isolation: isolate; transform: translateZ(0);
+}
+.p_news_wrap .c_con_card .c_conthumb img {
+    -webkit-transform: translateZ(0); transform: translateZ(0); backface-visibility: hidden; min-width: 0;
+}
+
+/* ================= 뉴스 // 리드면 =================== */
+.p_news_read {
+    width: 100%; margin:0 auto; background:#fff; color:var(--text);}
+.p_news_read .ad_bar {
+    background:#ffffff; text-align:center;
+}
+.p_news_read .ui_toggle,.ui_radio {
+    position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0);
+}
+.p_news_read .n_a_wrap {
+    width:100%; margin: 20px auto 0; display: flex; flex-direction: column; gap: 20px; --bodySize:18px;
+}
+.p_news_read .n_a_title {
+    width:94%; margin: 0 auto; font-size:24px; line-height:1.25;font-weight:800;
+}
+.p_news_read .n_a_meta {
+    width:94%; margin:0 auto; display:flex; flex-wrap:wrap; gap:3px; align-items:flex-start; position:relative;
+}
+.p_news_read .tag {
+    font-size:13px; color:var(--title); font-weight: 600; display: block;
+}
+.p_news_read .tag::after {
+    content: "ㅣ"; padding-left: 3px; color:var(--text_sub); font-weight: lighter;
+}
+.p_news_read .meta_txt {
+    font-size:13px; color:var(--text_sub);
+}
+.p_news_read .btn_font {
+    margin-left:auto; width:30px; height:30px; border-radius:999px; border:1px solid var(--text_mute); background:var(--bg); display:grid; place-items:center; font-weight:800; color:var(--text_sub); cursor:pointer;
+}
+/* 사진 */
+.p_news_read .n_a_photo {
+    margin:0; overflow:hidden; background:var(--bg); border-top:1px solid var(--title)
+}
+.p_news_read .n_a_photo img {
+    width:100%; height:100%; display:block; object-fit:cover; object-position:center;
+}
+/* 본문 */
+.p_news_read .n_a_body {
+    width:94%; margin:0 auto; word-break: keep-all; overflow-wrap: anywhere; 
+}
+.p_news_read .n_a_body p, .p_news_read .n_a_body div {
+    font-size:var(--bodySize); line-height:1.5; width:100%;
+}
+/* 좋아요 */
+.p_news_read .n_a_inbtn {
+    width:94%; margin:20px auto; display:flex; gap:10px; justify-content:space-between; align-items:center; background:#f6f6f6; border-radius:10px; padding:20px 15px;
+}
+.p_news_read .n_a_inbtn button {
+    border-radius: 5px; font-size: 14px; border:1px solid var(--text_mute); background:#ffffff; color:var(--text_sub);padding:10px 12px; flex:1;
+    display:inline-flex; align-items: center; gap: 5px; text-align: center; justify-content: center;
+}
+.p_news_read .n_a_inbtn button img {
+    width: 14px;
+}
+/* 버튼 */
+.p_news_read .n_a_otbtn {
+    width:94%; margin: 20px auto; display:flex; gap:12px;
+}
+.p_news_read .n_a_otbtn .btn {
+    flex:1; font-size:16px; display:inline-flex; align-items: center; gap: 5px; text-align: center; justify-content: center;
+}
+.p_news_read .n_a_otbtn .btn img {
+    width:15px
+}
+.p_news_read .n_a_otbtn .btn.btn_ds02 {
+    color:var(--text_sub)
+}
+/* 커뮤니티 인기글 */
+.p_news_read .confeed_header {
+    margin: 30px auto 0;
+}
+.n_a_comm {
+    width: 94%; margin: 20px auto 40px; 
+}
+/* 스와이프 */
+.n_a_comm_swipe {
+    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; padding-bottom:6px;
+}
+.n_a_comm_swipe::-webkit-scrollbar {
+    display:none;
+}
+.n_a_comm .swiper-slide {
+    text-align: left;
+}
+.n_a_comm .swiper-pagination {
+    position: initial; text-align: center;
+}
+.n_a_comm .dots {
+    display:flex; justify-content:center; gap:8px; margin-top:10px;
+}
+.n_a_comm .dot {
+    width:8px; height:8px; border-radius:999px; background:#ffffff; display:inline-block;
+}
+.n_a_comm .dot.is_on {
+    background:var(--sub);
+}
+/* 인기글 내용 */
+.n_a_comm_card {
+    flex:0 0 100%!important;  display:flex; gap:12px; flex-direction: column; align-items:center; scroll-snap-align:start; min-width: 0;
+}
+.n_a_comm_wrap {
+    display: flex; gap: 10px; background:#fff; border:1px solid var(--line); border-radius:10px; padding:15px; width: 100%; box-shadow: 0 1px 4px rgba(0, 0, 0, .05);
+}
+.n_a_comm_wrap .c_left {
+    flex:1 1 0; min-width:0; overflow:hidden;
+}
+.n_a_comm_wrap .c_left .c_title {
+    background:url('https://img.tf.co.kr/ss/fns/icon/icon_best_post.svg') no-repeat left 2px/13px; padding-left:18px; margin:0 0 10px; font-weight:600; font-size:14px; line-height:1.25; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden;
+    text-overflow:ellipsis; word-break: keep-all;
+}
+.n_a_comm_wrap .c_left .c_sub {
+    font-size: 11px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block; width:100%; color:var(--text_sub)
+}
+.n_a_comm_wrap .confeed .act .repill {
+    font-size: 13px; color:var(--text_sub)
+}
+.n_a_comm_wrap .confeed .act {
+    width: 100%;
+}
+.n_a_comm_wrap .confeed .act img {
+    width:16px
+}
+.n_a_comm_wrap .c_thumb {
+    flex:0 0 74px; width:74px; height:74px; border-radius:5px; overflow:hidden; background:#ffffff;
+}
+.n_a_comm_wrap .c_thumb img {
+    width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;
+}
+
+/* ===== 폰트 레이어 팝업 ===== */
+/* 글자 크기 설정 */
+#fs1:checked ~ .n_a_wrap{ --bodySize:14px; }
+#fs2:checked ~ .n_a_wrap{ --bodySize:16px; }
+#fs3:checked ~ .n_a_wrap{ --bodySize:18px; }
+#fs4:checked ~ .n_a_wrap{ --bodySize:20px; }
+#fs5:checked ~ .n_a_wrap{ --bodySize:22px; }
+
+.font_layer {
+    position:absolute; right:10px; top:48px; background:#fff; border:1px solid var(--text_mute); border-radius:10px; padding:15px; display:none; z-index:10002;
+}
+.layer_head {
+    display:flex; justify-content:space-between; align-items:center; font-size: 16px;
+}
+.layer_close{
+    display:grid; place-items:center; cursor:pointer; line-height:1; position: relative;
+}
+.layer_close .mClose { 
+    margin:0; position: absolute; top:0; right:0; 
+}
+.layer_close .mClose::before,
+.layer_close .mClose::after {
+    content: ""; position: absolute; right: 0; top: 0; width: 18px; height: 2px; background: var(--title); cursor: pointer; transition: transform 0.3s ease, backgrounds 0.3s ease;
+}
+.layer_close .mClose::before {
+    transform: rotate(45deg);
+}
+.layer_close .mClose::after {
+    transform: rotate(-45deg);
+}
+.layer_body {
+    display:flex; gap:8px; margin: 10px auto 0;
+}
+.fs_btn {
+    flex:1; width: 38px; height:38px; border-radius:999px; border:1px solid var(--text_mute); background:#fff; display:grid; place-items:center; font-weight:900; cursor:pointer;
+}
+.fs_btn:nth-child(1){font-size:14px;}
+.fs_btn:nth-child(2){font-size:16px;}
+.fs_btn:nth-child(3){font-size:18px;}
+.fs_btn:nth-child(4){font-size:20px;}
+.fs_btn:nth-child(5){font-size:22px;}
+
+/* 팝업 열기 + 배경 */
+.backdrop {
+    position:fixed; inset:0; background:rgba(0,0,0,.4); opacity:0; pointer-events:none; transition:.2s; z-index:10001;
+}
+#fontLayer:checked ~ .n_a_wrap .font_layer {
+    display:block;
+}
+#fontLayer:checked ~ .backdrop {
+    opacity:1; pointer-events:auto;
+}
+/* 선택된 폰트 버튼 */
+#fs1:checked ~ .n_a_wrap .fs_btn[for="fs1"],
+#fs2:checked ~ .n_a_wrap .fs_btn[for="fs2"],
+#fs3:checked ~ .n_a_wrap .fs_btn[for="fs3"],
+#fs4:checked ~ .n_a_wrap .fs_btn[for="fs4"],
+#fs5:checked ~ .n_a_wrap .fs_btn[for="fs5"]{
+    background:var(--title); color:#fff; border-color:transparent;
+}
+/* 260113 css 추가요청 */
+.n_a_body{
+    width:100%;
+    border-top: 1px solid var(--line);
+}
+.n_a_body table{
+    width:auto !important;
+    border-collapse:separate;
+    border-spacing:0;
+    margin:0 auto;
+}
+.n_a_body table td{
+    text-align: center;
+}
+.n_a_body table img{
+    max-width: 100% !important;
+}
+.n_a_body strong{
+    display: block;
+    width:94%;
+    margin:0 auto;
+}
+.n_a_body p{
+    width:94%;
+    margin:20px auto;
+}
+
+.n_a_comm_card > div{
+    flex: 0 0 100% !important;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: center;
+    scroll-snap-align: start;
+    min-width: 0;
+}
+
+.n_a_comm .dots{
+    gap:0 !important;
+    margin-top: 20px;
+}
+
+.n_a_comm .dots .swiper-pagination-bullet{
+    border: 1px solid var(--text) !important;
+    opacity: 0.6 !important;
+    transition: all 0.3s ease !important;
+    background: #ffffff !important;
+}
+
+.n_a_comm .dots .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: var(--sub) !important;
+}
+
+/* ================= 스폰 미션 // 광고 보기 1 =================== */
+.spon_mission {
+    background:url("https://img.tf.co.kr/ss/fns/2026/spon1_bg.jpg") no-repeat top center / cover;
+}
+.spon_inner {
+    width:100%; padding: 30px 0 0; display:flex; flex-direction:column;gap:20px; box-sizing:border-box; margin: 0 auto;
+}
+.spon1_top {
+    position:relative; width:94%; margin: 0 auto; padding-top:10px; text-align: center; 
+}
+.spon_top_sec {
+    display: inline-block; background:#ffffff; color:var(--title); border-radius: 999px; font-size: 14px; padding: 3px 7px;
+}
+.spon1_top h1 {
+    font-size: 40px;color:var(--title); font-weight: normal; position: relative;margin: 10px auto 140px;
+}
+.spon1_top h1 strong { 
+    font-weight: 800;
+}
+.spon1_top h1 .top_deco {
+    width:39px; display:block; position: absolute; left:25%; top:-20px; transform: translateX(-50%);
+}
+.spon1_card {
+    position:relative; width:100%; display:flex; justify-content:center; padding:10px 0 6px;
+}
+.spon1_card .top_txt {
+    position:absolute; left:50%; top:-20%; transform:translate(-50%, -50%); width:100%; height:auto; display:block; z-index: 99;
+}
+.spon1_card .ad_box {
+    width:min(230px, 62vw); aspect-ratio:1/1; background:#fff; border-radius:14px; box-shadow:0 10px 22px rgba(0,0,0,.12); display:grid; place-items:center; text-align:center; padding:12px; box-sizing:border-box;
+}
+.spon1_card .touch_btn {
+    position:absolute; right:7%; bottom:-2px; width:90px; height:90px; background:transparent; padding:0; cursor:pointer;
+}
+.spon1_card .touch_btn img {
+    width:100%; height:auto; display:block;
+}
+.spon1_notice {
+    margin-top: 80px; padding:30px 15px; background:#38497B; color:#ffffff; font-size:16px; line-height:1.35; backdrop-filter: blur(2px); display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; text-align: center; width: 100%;
+}
+
+/* ================= 스폰 미션 // 광고 보기 2 =================== */
+.spon2_top {
+    position:relative; width:94%; margin: 0 auto; padding-top:10px; text-align: center; 
+}
+.spon2_top_sec {
+    display: inline-block; background:#ffffff; color:var(--title); border-radius: 999px; font-size: 14px; padding: 3px 7px;
+}
+.spon2_top h1 {
+    font-size: 40px;color:var(--title); font-weight: normal; position: relative;margin: 10px auto 0;
+}
+.spon2_top h1 strong { 
+    font-weight: 800;
+}
+.spon2_top h1 .top_deco {
+    width:39px; display:block; position: absolute; left:25%; top:-20px; transform: translateX(-50%);
+}
+.spon2_card {
+    position:relative; width:100%; display:flex; justify-content:center; gap: 20px; flex-direction: column; align-items: center; text-align: center;
+}
+.spon2_card .top_txt2 {
+    width:100%; height:auto; display:block;
+}
+.spon2_m_wrap {
+    width: 94%; margin: 10px auto 0;
+}
+.spon2_sec {
+    display: flex; flex-direction: column; gap: 20px; margin: 10px auto 20px;
+}
+.spon2_sec + .spon2_sec {
+    padding-top:20px;
+}
+.spon2_card h2 {
+    display: flex; align-items: center; gap: 5px; color: var(--title); font-size: 20px; justify-content: center;
+}
+.spon2_card h2 img {
+    width: 22px;
+}
+.spon2_list {
+    list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; text-align: left;
+}
+.spon2_item {
+    display:flex; align-items:center; justify-content:space-between; gap:12px; padding:15px; background:#ffffff; border-radius:10px; box-shadow: 0 2px 3px rgba(0,0,0,.05);
+}
+.spon2_txt {
+    font-size:16px; line-height:1.25; font-weight: 600; flex:1; min-width:0; word-break:keep-all;
+}
+.spon2_btn {
+    flex:0 0 20%; min-width:86px; width: 100%; padding:12px 5px; border-radius:5px; font-size:16px; font-weight:600; color:#fff; cursor:pointer;
+}
+.spon2_btn.ad_done {
+    background:var(--text_mute); color:#fff; 
+}
+.spon2_btn.star_ad {
+    background:var(--main);
+}
+.spon2_btn.g_ad {
+    background:var(--sub);
+}
+.spon2_btn:active {
+    transform:translateY(1px);
+}
+.spon2_card .spon1_notice {
+    margin: 20px auto 0; text-align: left;
+}
+.spon2_card .spon1_notice .list_text li {
+    color:#ffffff
+}
+
+/* ================= 스폰 미션 // 스테이션 =================== */
+.spon2_top h3 {
+    display: inline-block; background:var(--title); color:var(--main); font-size: 22px; font-weight: 800; padding: 5px 10px; margin: 14px auto;
+}
+.spon2_top h5 {
+    color:var(--title); font-size: 18px; margin: 0 auto 30px;
+}
+.spon2_station {
+    position: relative; width: 100%; margin: 0 auto; background:#ffffff;
+    padding:40px 15px; display: flex; flex-direction: column; gap: 20px; text-align: center;
+}
+.spon2_station .spon2_s_txt {
+    font-size: 14px; color:var(--text_sub)
+}
+.spon2_station .btn_row .btn {
+    box-shadow: 0 2px 3px rgba(0,0,0,.15);
+}
+.spon2_s_notice .meta .ulabel {
+    line-height:1.1; display:inline; background: linear-gradient(transparent 20%, var(--sub_200) 0) no-repeat; background-size: 100% 0.45em; background-position: 0 100%; -webkit-box-decoration-break: clone; box-decoration-break: clone; font-size:17px; font-weight:700;
+}
+.spon2_st .spon1_notice {
+    margin: 0 auto; text-align: left;
+}
+.spon2_st .spon1_notice .list_text li {
+    color:#ffffff
+}
+
+/* ================= 오늘의 별 모으기 팝업 =================== */
+.modal_content .g_fns_grid {
+    width: 100%; margin: 0 auto;
+}
+.modal_content .g_fns_grid .g_fns_card {
+    padding: 20px 15px; border:1px solid var(--text_mute)
+}
+.modal_content .g_fns_grid .f_checkbox {
+    flex: 0 0 65%; gap: 10px; font-size:17px; 
+}
+.modal_content .f_checkbox input:disabled ~ .f_label {
+    color: var(--text); text-align: left;
+}
+.modal_content .g_fns_grid .m_num {
+    color:var(--text_sub); text-align: right; letter-spacing: 0.1em; font-size: 14px;
+}
+.modal_content .g_fns_grid .tbox {
+    width:100%; background:var(--main_200); border-radius: 10px; padding: 10px; text-align: left;
+}
+.modal_content .g_fns_grid .tbox h3 {
+    font-size: 16px;
+}
+.modal_content .g_fns_grid .tbox > span {
+    font-size: 13px; color:var(--text_sub)
+}
+
+/* ================= 포인트 구매하기 웹/앱/동의 팝업 =================== */
+.p_buy_wrap { 
+    width: 100%; margin: 20px auto;
+}
+.p_buy_wrap .g_fns_grid .btn {
+    margin-top: 20px;
+}
+.buy_agree_pop {
+    display: flex; flex-direction: column; gap: 20px; align-items: flex-start;
+}
+.buy_agree_pop .list_text {
+    background:var(--bg); padding: 20px 15px; border-radius: var(--r_md); border:1px solid var(--line); text-align: left;
+}
+.buy_agree_pop .buy_agre_radio {
+    display: flex; width: 100%; justify-content: space-around;
+}
+.buy_agree_pop .buy_agre_radio .f_radio {
+    flex: 0 0 50%;
+}
+
+
+/* ================= 포인트 구매하기 // 결제 수단 =================== */
+.p_pay_wrap {
+    width:100%;
+}
+.p_pay_wrap .p_pay_price {
+    width: 94%; margin: 20px auto 30px; background:var(--main_200); border:1px solid var(--main); border-radius: 10px; align-items: center; justify-items: center; display: flex; flex-direction: column; gap: 5px; padding: 20px 15px;
+}
+.p_pay_wrap .p_pay_price .TitleS {
+    display: flex; gap: 5px;
+}
+.p_pay_wrap .p_pay_price .TitleS img {
+    width: 18px;
+}
+.p_pay_wrap .p_pay_price p {
+    font-size: 22px; font-weight: 700; color: var(--main);
+}
+.p_pay_wrap .g_fns_grid .g_fns_card {
+    background:#ffffff; border:1px solid var(--text_mute); padding: 20px 15px;
+}
+.p_pay_wrap .g_fns_grid .g_fns_card .g_fns_card_txt h4 {
+    font-weight: 600; margin-bottom: 0;
+}
+
+/* ================= 팬버십 1,3개월 / 혜택 비교 =================== */
+.p_fbs_top {
+    background:var(--bg); padding: 20px 15px; 
+}
+.p_fbs_top img {
+    width: 88px;
+}
+.p_fbs_top h2 {
+    font-size: 18px; line-height: 1.35; margin-bottom: 12px;
+}
+.p_fbs_top p {
+    color:var(--text_sub); margin-bottom: 12px;
+}
+.p_fbs_top > span {
+    display: inline-block; background: var(--text_mute); color:#ffffff; padding: 2px 5px; font-size: 13px;
+}
+.fbs_wrap {
+    width: 100%; margin: 0 auto; background: #fff;
+}
+.fbs_wrap .tabs_ctrl {
+    display: none;
+}
+.fbs_wrap .tabs_bar {
+    display: flex; gap: 7px; width: 94%; margin:20px auto 0; flex-wrap: wrap;
+}
+.fbs_wrap .tabs_bar .tab_fbs {
+    position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 15px; background:var(--bg); font-size: 15px; color: var(--text_sub); cursor: pointer; transition: color .25s; border-radius: 999px; border:1px solid var(--line)
+}
+.fbs_wrap .pandels {
+    margin:0
+}
+#tap_p_1month:checked ~ .tabs_bar label[for="tap_p_1month"],
+#tap_p_3month:checked ~ .tabs_bar label[for="tap_p_3month"],
+#tap_p_comparison:checked ~ .tabs_bar label[for="tap_p_comparison"] {
+    color:var(--main); font-weight:700; background:var(--main_200); border:1px solid var(--main)
+}
+#tap_p_1month:checked ~ .tabs_bar label[for="tap_p_1month"]::after,
+#tap_p_3month:checked ~ .tabs_bar label[for="tap_p_3month"]::after,
+#tap_p_comparison:checked ~ .tabs_bar label[for="tap_p_comparison"]::after {
+    background:var(--main); 
+}
+#tap_p_1month:checked ~ .panels #tap_p_1month { display:block; }
+#tap_p_3month:checked ~ .panels #tap_p_3month { display:block; }
+#tap_p_comparison:checked ~ .panels #tap_p_comparison { display:block; }
+
+.fbs_wrap .panels .panel {
+    display: none;
+}
+#tap_p_1month, #tap_p_3month, #tap_p_comparison {
+    width: 100%; margin: 0 auto;
+}
+/* 1개월, 3개월 */
+.tap_p_fbs_wrap .g_vote_grid .g_tbl, .tap_p_fbs_wrap .g_vote_grid .g_tbl_txt {
+    width: 100%;
+}
+.tap_p_fbs_wrap .g_tbl .list_text ul {
+    gap: 10px;
+}
+.tap_p_fbs_wrap .g_tbl .list_text li {
+    font-size: 16px; line-height: 1.35;
+}
+.fbs_wrap .panels .panel .box_text {
+    padding: 30px 15px;
+}
+.fbs_wrap .panels .panel .box_text ul {
+    gap: 10px;
+}
+.fbs_wrap .panels .panel .box_text li {
+    color:var(--text_sub); font-size: 13px;
+}
+.tap_p_fbs_wrap .g_tbl .g_tbl_con p.subcolor {
+    font-size: 13px; margin-top: 10px;
+}
+/* 혜택 비교 */
+.tab_p_com_1 {
+    background:var(--main_200); border-radius: 10px; padding: 15px; display: flex; gap: 5px; justify-content: space-between; align-items: center;
+}
+.tab_p_com_3 {
+    background:var(--sub_100); border-radius: 10px; padding: 15px; display: flex; gap: 5px; justify-content: space-between; align-items: center;
+}
+.tab_p_com_1 h1 {
+    color:var(--main); font-size: 19px; 
+}
+.tab_p_com_3 h1 {
+    color:var(--sub); font-size: 19px; 
+}
+.tab_p_com_1 h1 img, .tab_p_com_3 h1 img {
+    width: 26px; vertical-align: middle;
+}
+.tab_p_com_1 span, .tab_p_com_3 span {
+    color:var(--text); font-size: 16px; font-weight: normal;
+}
+.tap_p_fbs_wrap {
+    width:94%; margin:0 auto 30px; display: flex; flex-direction: column; gap: 20px;
+}
+.tap_p_fbs_wrap .g_angel_angelkit {
+    border:1px solid var(--line); box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+}
+.tap_p_fbs_wrap .g_angel_angelkit .g_angel_head {
+    border-right:1px solid var(--line); color:var(--text); background:var(--bg); word-break: keep-all;
+}
+.tap_p_fbs_wrap .g_angel_angelkit .g_angel_cell {
+    padding: 12px 10px;
+}
+.tap_p_fbs_wrap .g_angel_row + .g_angel_row .g_angel_cell {
+    border-top: 1px solid var(--line) ;
+}
+.tap_p_fbs_wrap .sub {
+    margin-top: 5px;
+}
+.tap_p_fbs_wrap .g_btn_wrap {
+    width:100%; margin: 10px auto 30px;
+}
+
+
+/* ================= 취소 환불 =================== */
+.pcancel_wrap {
+    width: 100%; margin: 0 auto 40px; background: #fff;
+}
+.pcancel_wrap .tabs_ctrl {
+    display: none;
+}
+.pcancel_wrap .tabs_bar {
+    display: flex; gap: 7px; width: 94%; margin:20px auto 0; flex-wrap: wrap;
+}
+.pcancel_wrap .tabs_bar .tab_pcan {
+    position: relative; display: flex; justify-content: center; align-items: center; padding: 10px 15px; background:var(--bg); font-size: 15px; color: var(--text_sub); cursor: pointer; transition: color .25s; border-radius: 999px; border:1px solid var(--line)
+}
+.pcancel_wrap .pandels {
+    margin:0
+}
+#tap_pcan_01:checked ~ .tabs_bar label[for="tap_pcan_01"],
+#tap_pcan_02:checked ~ .tabs_bar label[for="tap_pcan_02"] {
+    color:var(--main); font-weight:700; background:var(--main_200); border:1px solid var(--main)
+}
+#tap_pcan_01:checked ~ .tabs_bar label[for="tap_pcan_01"]::after,
+#tap_pcan_02:checked ~ .tabs_bar label[for="tap_pcan_02"]::after {
+    background:var(--main); 
+}
+#tap_pcan_01:checked ~ .panels #tap_pcan_01 { display:block; }
+#tap_pcan_02:checked ~ .panels #tap_pcan_02 { display:block; }
+
+.pcancel_wrap .panels .panel {
+    display: none;
+}
+
+.panel .pay_cancel_wrap .category_header {
+    border-bottom: none;
+}
+.pcan_pcanbox {
+    width: 94%; margin: 0 auto; display: flex; flex-direction: column; gap: 12px;
+}
+.pcan_pcanbox .list_text {
+    margin-top: 10px;
+}
+.pcan_pcanbox .list_text li {
+    color:var(--text_sub)
+}
+.pay_cancel_wrap .g_btn_wrap {
+    margin:20px auto 30px
+}
+.pcan_pcanbox .box_contents .list_text {
+    margin-top: 0;
+}
+.pcan_pcanbox .box_contents .list_text li {
+    font-size: 15px; color:var(--text)
+}
+
+
+/* ================= 무료 충전소 =================== */
+.p_freestar_wrap {
+    width: 100%;
+}
+.p_freestar_wrap .p_freestar_top h2 {
+    display: flex; gap: 5px; align-items: center;
+}
+.p_freestar_wrap .p_freestar_top h2 img {
+    width: 22px;
+}
+.p_freestar_wrap .p_fbs_top p {
+    margin: 0;
+}
+.p_freestar_wrap .p_fbs_top h2 {
+    margin-bottom: 4px;
+}
+.p_freestar_wrap .g_fns_grid {
+    margin-top: 20px;
+}
+.p_freestar_wrap .g_fns_grid .g_fns_card_txt {
+    display: flex; gap: 8px; align-items: center;
+}
+.p_freestar_wrap .g_fns_grid .g_fns_card .g_fns_card_txt h4 {
+    margin-bottom: 0;
+}
+.g_fns_grid .g_fns_card .g_fns_card_thumb img {
+    vertical-align: middle;
+}
+.p_freestar_wrap .g_fns_grid .g_fns_card .g_fns_card_txt .clabel_rk1 {
+    width: 20px; height: 20px; line-height: 20px; color:#ffffff; font-size: 12px;
+}
+
+/* ================= 오늘의 G+ 포인트 =================== */
+.p_gpoint_wrap .p_fbs_top .gsup .sup {
+    top:0
+}
+.p_gpoint_wrap .p_fbs_top p {
+    margin: 0;
+}
+.p_gpoint_wrap .p_fbs_top h2 {
+    margin-bottom: 4px;
+}
+.p_gpoint_wrap .g_fns_grid {
+    width: 94%; margin: 20px auto 40px;
+}
+.p_gpoint_wrap .g_fns_grid .g_fns_card {
+    padding: 20px 15px; gap: 5px; position: relative; display: flex; align-items: center; min-width: 0;
+}
+.p_gpoint_wrap .g_fns_grid .f_checkbox {
+    flex: 1 1 auto;
+    gap: 10px;
+    font-size: 17px; min-width: 0;
+}
+.p_gpoint_wrap .f_checkbox input:disabled ~ .f_label {
+    color:var(--text); gap: 5px;
+}
+.p_gpoint_wrap .g_fns_grid .g_fns_card .m_num {
+    letter-spacing: 0.1em;
+}
+/* 말풍선 */
+.p_gpoint_wrap .g_fns_grid .g_fns_card .balloon {
+    cursor: none; border-radius: 50px; position: absolute; padding: 2px 10px; box-sizing: border-box; background: var(--sub); color: #ffffff; font-size: 13px; top: -12px; left: 50px; letter-spacing: -0.05em; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.p_gpoint_wrap .g_fns_grid .g_fns_card .balloon:after {
+    border-top: 0px solid transparent; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid var(--sub); content: ""; position: absolute; bottom: -4px; right: 3px; transform: rotate(180deg);
+}
+.p_gpoint_wrap .g_fns_grid .btn {
+    margin-top: 10px;
+}
+/* 260410 수정 */
+.g_fns_grid .gsup {
+    display: inline-block; white-space: nowrap; vertical-align: middle; position:relative
+}
+.g_fns_grid .gunit {
+    display: inline-flex; align-items: baseline;  white-space: nowrap; margin-left: 0;
+}
+.g_fns_grid .gunit sup {
+    font-size: 12px; line-height: 0;  vertical-align: super;  position: relative; top: 0
+}
+/* ================= 타임별 이벤트 ================== */
+.timestar_wrap {
+    background: #FF92BB;background: linear-gradient(0deg,rgba(255, 146, 187, 1) 0%, rgba(194, 153, 222, 1) 50%, rgba(139, 159, 254, 1) 100%);
+}
+.timestar_wrap.time_fbs {
+    background: #1ECAD3;background: linear-gradient(0deg, rgba(30, 202, 211, 1) 0%, rgba(139, 159, 254, 1) 50%, rgba(139, 159, 254, 1) 100%);
+}
+.timestar_wrap .timestar_top {
+    padding: 60px 0 30px;
+}
+.timestar_wrap .timestar_top img {
+    width:98%; text-align: center;
+}
+/* 남은 시간 */
+.timestar_box {
+    position:relative; margin:8px auto 0; width:100%; display:flex; justify-content:center; padding:50px 10px 50px; background: rgba(255,255,255,.3); 
+}
+.timestar_tit {
+    border-radius:var(--r_pill); background:#7088FF; text-align: center; padding: 8px 14px; position: absolute; left: 50%; transform: translateX(-50%); top: -20px;
+}
+.timestar_tit .tit {
+    color:#ffffff; font-size:16px;
+}
+.timestar_timer {
+    position:relative; display:flex; align-items:center; width: 100%; justify-content:center; gap:2.5%; padding: 0 20px;
+}
+.timestar_timer .digit {
+    width:22%; aspect-ratio: 16 / 18; border-radius:5px; background:var(--text); color:#ffffff; display:grid; place-items:center; font-weight:900; font-size:40px; letter-spacing:.02em;
+}
+.timestar_timer .colon {
+    width:4%; text-align:center; font-size:40px; font-weight:900; color:#ffffff; transform:translateY(-4%);
+}
+.timestar_bottom {
+    padding: 20px 0 30px;
+}
+.timestar_bottom_fbs {
+    padding: 20px 0 50px;
+}
+.timestar_notice {
+    width: 94%; margin: 30px auto; color: #ffffff; text-align: center; 
+}
+.timestar_bottom .btn { 
+    position: relative; box-shadow: 0 2px 6px rgba(0, 0, 0, .15)
+}
+.timestar_bottom .btn.btn_rs_100 { 
+    color:var(--title); font-weight: 600;
+}
+.time_btn_wrap {
+    width: 94%; display: flex; flex-direction: column; gap: 10px; margin: 20px auto 
+}
+.time_btn_wrap.timestar .btn_rs_100 { 
+    color:var(--sub)
+}
+.time_btn_wrap.timestar .btn_rs_100 .timestar_balloon2 {
+    top: -23px;
+}
+/* 타임 말풍선 */
+.timestar_bottom .btn .timestar_balloon2 {
+    position:absolute; top:-38px; right: 0; line-height: 1.15; cursor: none; border-radius: 50px;  padding: 6px 16px; box-sizing: border-box; background: var(--main); color: #ffffff; font-size: 14px; font-weight: normal;
+}
+.timestar_bottom .btn .timestar_balloon2:after {
+    border-top: 0px solid transparent; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid var(--main); content: ""; position: absolute; bottom: -4px; right:6px; transform: rotate(180deg);
+}
+/* 팬버십 타임 말풍선 */
+.timestar_bottom .timefbs .btn .timestar_balloon2 {
+    position:absolute; top:-20px; right: 0; line-height: 1.15; cursor: none; border-radius: 50px;  padding: 6px 10px; box-sizing: border-box; background: var(--text); color: #ffffff; font-size: 14px; font-weight: normal;
+}
+.timestar_bottom .timefbs .btn .timestar_balloon2:after {
+    border-top: 0px solid transparent; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid var(--text); content: ""; position: absolute; bottom: -4px; right:6px; transform: rotate(180deg);
+}
+/* 260121 추가 요청 */
+#popup_fanbership_add_join .btn_row{flex-direction: column-reverse; margin-top:30px;}
+#popup_fanbership_add_join .btn_row button{margin-top:0;}
+
+
+
+
+
+/* ============= 260113 영주 ============= */
+/* ******************** 패드, 탭, 폴드 영역 ******************** */
+@media screen and (min-width:480px) and (max-width:767px) {
+
+/* ================== 포인트 홈 ====================== */
+.point_m_wrap .p_tab_item img { width: 20px; }
+.p_tab_panel .p_tab_title h2 { font-size: 22px; }
+.point_m_wrap .p_tab_item { font-size: 18px; }
+.p_icon_thumb { padding: 20px 6px; }
+.p_icon_thumb img { width: 30%; }
+.p_icon_label { font-size: 17px; }
+.g_fns_grid .g_fns_card { padding: 20px 15px; }
+.p_tab_panel .g_fns_grid .g_fns_card .g_fns_card_txt h4 { font-size: 20px; }
+
+
+/* ================== 포인트 // 출석체크 ====================== */
+.point_check_header { font-size: 20px; padding: 20px 10px; top: -45px; }
+.point_check_wrap .w_94 .list_text { padding: 25px 0 ;}
+.p_check_desc { font-size: 19px; margin: 30px auto; }
+.point_check_card { padding: 30px 25px; }
+
+/* ================== 뉴스 // 홈 ====================== */
+.p_news_wrap .p_mnews_grid { grid-template-columns: repeat(2, minmax(0,1fr)); display: grid; }
+.p_news_wrap .news_card .news_thumb { aspect-ratio: 14 / 8; }
+.p_news_wrap .news_card .news_thumb img { object-position: 0 20%; }
+.p_news_wrap .news_card .news_caption { left: 20px; right: 20px; bottom: 20px; font-size: 26px; line-height: 1.3; }
+.p_news_wrap .p_mnews_gridbox { border-bottom: 0;}
+.p_news_wrap .p_mnews_grid .p_mnews_title .TitleS { font-size: 21px; }
+.p_hot_news { border-top: 10px solid var(--line); padding: 30px 0 0; margin-top: 30px; }
+.p_news_wrap .p_hot_title { font-size: 24px; }
+.p_news_wrap .p_hot_news .p_hot_list { width: 94%; margin: 0 auto; }
+.p_news_wrap .p_hot_link { padding: 14px 0; }
+.p_news_wrap .p_hot_txt { font-size: 20px; }
+.p_news_wrap .p_hot_thumb { flex: 0 0 124px; width: 124px; height: 74px; }
+
+/* =================  뉴스 // 섹션 리스트 =================== */
+.p_news_wrap .p_newslist .p_mnews_grid { width:94%; margin:0 auto; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.p_news_wrap .p_mnews_grid .p_mnews_title .TitleS { font-size: 21x; }
+.p_news_wrap .p_mnews_small .p_hot_txt { font-size: 20px; }
+
+/* ================= 뉴스 // 검색 결과 =================== */
+.p_news_wrap .p_news_result .c_con_grid { gap: 25px 20px; }
+.p_news_wrap .p_news_result .c_con_card_text { font-size: 19px; }
+
+/* ================= 뉴스 // 리드면 =================== */
+.p_news_read .n_a_title { font-size: 30px; }
+.p_news_read .tag, .p_news_read .meta_txt { font-size: 15px; }
+.p_news_read .n_a_inbtn { margin: 30px auto;  }
+.p_news_read .n_a_inbtn button { font-size: 16px; padding: 20px 15px; }
+.p_news_read .n_a_otbtn { margin: 30px auto 0; }
+.p_news_read .n_a_otbtn .btn { font-size: 17px; }
+.n_a_comm_wrap { padding: 20px 15px; gap: 20px; }
+.n_a_comm_wrap .c_left .c_title { font-size: 18px; background: url(https://img.tf.co.kr/ss/fns/icon/icon_best_post.svg) no-repeat left 3px / 16px; padding-left: 22px; }
+.n_a_comm_wrap .c_left .c_sub { font-size: 13px; }
+.n_a_comm_wrap .confeed .act { margin-top: 10px; }
+.n_a_comm_wrap .confeed .act .repill { font-size: 14px; }
+.n_a_comm_wrap .confeed .act img { width: 17px; }
+.n_a_comm_wrap .c_thumb { flex: 0 0 124px; width: 124px; }
+/* 글자 크기 설정 */
+#fs1:checked ~ .n_a_wrap{ --bodySize:16px; }
+#fs2:checked ~ .n_a_wrap{ --bodySize:18px; }
+#fs3:checked ~ .n_a_wrap{ --bodySize:20px; }
+#fs4:checked ~ .n_a_wrap{ --bodySize:22px; }
+#fs5:checked ~ .n_a_wrap{ --bodySize:24px; }
+.fs_btn:nth-child(1){font-size:16px;}
+.fs_btn:nth-child(2){font-size:18px;}
+.fs_btn:nth-child(3){font-size:20px;}
+.fs_btn:nth-child(4){font-size:22px;}
+.fs_btn:nth-child(5){font-size:24px;}
+.font_layer { right: 0; padding: 20px; }
+.layer_head { font-size: 20px; }
+.layer_body { margin: 15px auto 0; }
+
+/* ================= 스폰 미션 // 광고 보기 1 =================== */
+.spon_inner { padding: 80px 0 0; gap: 40px; }
+.spon1_top h1 .top_deco { left: 34%; }
+.spon_top_sec { font-size: 18px; padding: 10px 15px; }
+.spon1_top h1 { font-size: 3.5rem; }
+.spon1_card .top_txt { width:70% }
+.spon1_card .touch_btn { left:65%; bottom:0; transform: translateX(-50%); }
+.spon1_notice { padding: 30px 20px; }
+
+/* ================= 스폰 미션 // 광고 보기 2 =================== */
+.spon2_top h1 .top_deco { left: 34%; }
+.spon_top_sec { font-size: 18px; padding: 10px 15px; }
+.spon2_top h1 { font-size: 3.5rem; }
+.spon2_card .top_txt2 { width:80% }
+.spon2_card h2 { font-size: 26px; }
+.spon2_card h2 img { width: 26px; }
+.spon2_item { gap:20px; padding: 20px; }
+.spon2_txt { font-size: 18px; }
+.spon2_btn { flex:0 0 30%; padding: 15px 5px; font-size: 18px; }
+
+/* ================= 스폰 미션 // 스테이션 =================== */
+.spon2_top h3 { font-size: 30px; margin: 20px auto; }
+.spon2_top h5 { margin: 0 auto 80px; font-size: 22px; }
+.spon2_station { padding: 80px 20px; gap: 40px; }
+.spon2_station .spon2_s_txt { line-height: 1.4; font-size: 20px; }
+.spon2_s_notice .meta .ulabel { font-size: 20px; }
+
+/* ================= 오늘의 별 모으기 팝업 =================== */
+.modal_content .g_fns_grid .g_fns_card { padding: 25px 20px; }
+.modal_content .g_fns_grid .f_checkbox { gap:14px; font-size: 19px; }
+.modal_content .g_fns_grid .f_checkbox { flex: 0 0 78%; }
+.modal_content .g_fns_grid .m_num { font-size: 16px; }
+.modal_content .g_fns_grid .tbox { padding: 20px; }
+.modal_content .g_fns_grid .tbox h3 { font-size: 18px; }
+.modal_content .g_fns_grid .tbox > span { font-size: 15px; }
+
+/* ================= 포인트 구매하기 웹/앱/동의 팝업 =================== */
+.p_buy_wrap { margin: 30px auto; }
+.buy_agree_pop .buy_agre_radio { justify-content: flex-start; gap: 30px; }
+.buy_agree_pop .buy_agre_radio .f_radio { flex: 0 0 auto; }
+.buy_agree_pop .list_text li { font-size: 17px; }
+
+/* ================= 포인트 구매하기 // 결제 수단 =================== */
+.p_pay_wrap .p_pay_price { margin: 30px auto 40px; }
+.p_pay_wrap .p_pay_price p { font-size: 26px; }
+.p_pay_wrap .g_fns_grid .g_fns_card { padding: 25px 20px; }
+.p_pay_wrap .g_fns_grid .g_fns_card .g_fns_card_txt h4 { font-weight: normal; margin-bottom: 0; }
+
+/* ================= 팬버십 1,3개월 / 혜택 비교 =================== */
+.p_fbs_top { padding: 25px 20px; }
+.p_fbs_top img { width: 110px; }
+.p_fbs_top h2 { font-size: 20px; }
+.p_fbs_top > span { font-size: 14px; }
+.tap_p_fbs_wrap { margin: 0 auto 50px; }
+.fbs_wrap .tabs_bar { gap: 10px; margin:30px auto 0 }
+.fbs_wrap .tabs_bar .tab_fbs { padding: 12px 20px; font-size: 17px; }
+.fbs_wrap .panels .panel .box_text li { font-size: 14px; }
+.tap_p_fbs_wrap .g_tbl .list_text ul { gap: 15px; }
+.tap_p_fbs_wrap .g_tbl .list_text li { font-size: 17px; }
+.fbs_wrap .panels .panel .box_text { padding: 40px 20px; }
+.tab_p_com_1 span, .tab_p_com_3 span { font-size: 20px; }
+.tap_p_fbs_wrap .g_tbl .g_tbl_con p.subcolor { font-size: 14px; }
+.tap_p_fbs_wrap .g_angel_angelkit .g_angel_cell { padding: 14px 12px; }
+
+/* ================= 취소 환불 =================== */
+.pcancel_wrap .tabs_bar { margin: 30px auto 0; }
+.pcancel_wrap .tabs_bar .tab_pcan { padding: 12px 17px; font-size: 16px; }
+
+/* ================= 무료 충전소 =================== */
+.p_freestar_wrap .g_fns_grid { margin-top: 30px; }
+
+/* ================= 오늘의 G+ 포인트 =================== */
+.p_gpoint_wrap .g_fns_grid { margin: 30px auto 50px; }
+.p_gpoint_wrap .g_fns_grid .btn { margin-top: 20px; }
+.p_gpoint_wrap .g_fns_grid .g_fns_card { padding: 24px 20px; }
+.p_gpoint_wrap .g_fns_grid .f_checkbox { flex: 0 0 80%; }
+.p_gpoint_wrap .f_checkbox input:disabled ~ .f_label { font-size: 19px; }
+
+/* ================= 타임별 이벤트 ================== */
+.timestar_wrap .timestar_top img, .timestar_fbs_wrap .timestar_fbs_top img { width: 80%; }
+.timestar_wrap .timestar_top, .timestar_fbs_wrap .timestar_fbs_top {
+    padding: 60px 0 50px; width: 100%; margin: 0 auto; text-align: center;
+}
+.timestar_box { padding: 60px 10px 60px; }
+.timestar_tit { padding: 14px 20px; top: -30px; }
+.timestar_tit .tit { font-size: 24px; }
+.timestar_timer { padding: 0 40px; }
+.timestar_timer .digit { width: 19%; font-size: 5rem; }
+.timestar_bottom { padding: 50px 0 60px; }
+.timestar_bottom .btn .timestar_balloon2 { top: -40px; line-height: 1.2; padding: 6px 20px; font-size: 15px; }
+.time_btn_wrap { gap: 20px;}
+
+/* ================= 팬버십 타임별 이벤트 ================== */
+
+
+}
+
+
+
+
+/* ******************** 데스크탑 영역 ******************** */
+/* ============= Tablet & Desktop Device ============= */
+@media all and (min-width:768px) {
+    
+/* ============= base 250917 영주 ============= */
+
+
+
+/* ================== 포인트 홈 ====================== */
+.point_m_wrap { padding: 30px 0; }
+.point_m_wrap .p_tab_item { font-size: 20px; padding: 16px 3px; }
+.point_m_wrap .p_tab_item img { width: 20px; }
+.point_m_wrap .p_tab_panel { margin: 40px auto 0; }
+.p_tab_panel .p_tab_title h2 { font-size: 22px; }
+.p_tab_panel .p_tab_title h2 img { width:22px }
+.p_tab_panel .p_tab_title > span { font-size: 18px; }
+.p_mission_grid { margin:40px auto; gap:30px }
+.p_icon_thumb { padding: 20px 6px; }
+.p_icon_thumb img { width: 30%; }
+.p_icon_label { font-size: 17px; }
+.p_tab_panel .g_fns_grid .g_fns_card { min-height: 92px; }
+
+
+/* ================== 포인트 // 출석체크 ====================== */
+.point_check_wrap { padding: 0 0 70px; }
+.point_check_card { margin: 40px auto 30px; padding: 30px 20px 40px; }
+.point_check_header { padding: 15px 10px; font-size: 20px; }
+.p_check_desc { font-size: 20px; margin: 40px auto; }
+.p_check_grid { gap: 15px 10px; }
+
+
+/* ================== 뉴스 // 홈 ====================== */
+.p_news_wrap { margin: 30px auto 40px; }
+.p_news_wrap .p_new_top { gap: 30px; }
+.p_news_wrap .news_card .news_thumb { aspect-ratio: 16 / 9; }
+.p_news_wrap .news_card .news_caption { left:24px; bottom: 24px; font-size: 30px; line-height: 1.2; }
+/* 뉴스 */
+.p_news_wrap .p_mnews_grid { width:94%; margin:0 auto; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.p_news_wrap .p_mnews_gridbox { border:0 }
+.p_news_wrap .p_mnews_grid .p_mnews_title { width:100%; margin: 14px auto 20px; }
+.p_news_wrap .p_mnews_grid .p_mnews_title .TitleS { font-size: 22px; }
+.p_news_wrap .p_hot_news { border-top: 10px solid var(--line); padding: 30px 0 0; margin-top: 30px;}
+.p_news_wrap .p_hot_title { font-size: 24px; padding-bottom: 10px;}
+.p_news_wrap .p_hot_txt { font-size: 21px; }
+.p_news_wrap .p_hot_thumb { flex: 0 0 200px; width: 200px; height: 100px; }
+.p_news_wrap .p_hot_link { gap: 20px; padding: 20px; }
+
+
+/* =================  뉴스 // 섹션 리스트 =================== */
+.p_news_wrap .p_newslist .p_mnews_grid { width:94%; margin:0 auto; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.p_news_wrap .p_newslist { margin: 30px auto ;}
+.p_news_wrap .p_mnews_grid .p_mnews_title .TitleS { font-size: 22px; }
+
+.p_news_wrap .p_newslist .p_mnews_gridbox { border-bottom: 0; }
+.p_news_wrap .p_newslist .p_mnews_grid .p_mnews_title { margin: 14px auto 30px; }
+.p_news_wrap .p_mnews_small .p_hot_thumb { flex: 0 0 200px; width: 200px; height: 120px; }
+.p_news_wrap .p_mnews_small .p_hot_txt { font-size: 21px; }
+.p_news_wrap .p_mnews_small .p_hot_link { border-top: 1px solid var(--line); padding: 30px 0; gap: 20px; }
+
+/* ================= 뉴스 // 검색 결과 =================== */
+.p_news_wrap .p_news_result .c_con_grid { gap: 30px 20px; }
+.p_news_wrap .p_news_result .c_con_card_text { font-size: 19px; margin-top: 10px; }
+
+/* ================= 뉴스 // 리드면 =================== */
+/* 글자 크기 설정 */
+#fs1:checked ~ .n_a_wrap{ --bodySize:16px; }
+#fs2:checked ~ .n_a_wrap{ --bodySize:18px; }
+#fs3:checked ~ .n_a_wrap{ --bodySize:20px; }
+#fs4:checked ~ .n_a_wrap{ --bodySize:22px; }
+#fs5:checked ~ .n_a_wrap{ --bodySize:24px; }
+.fs_btn:nth-child(1){font-size:16px;}
+.fs_btn:nth-child(2){font-size:18px;}
+.fs_btn:nth-child(3){font-size:20px;}
+.fs_btn:nth-child(4){font-size:22px;}
+.fs_btn:nth-child(5){font-size:24px;}
+.font_layer { right: 0; padding: 20px; }
+.layer_head { font-size: 20px; }
+.layer_body { margin: 15px auto 0; }
+/* 리드면 */
+.p_news_read .n_a_wrap { margin: 30px auto 0; gap: 30px; }
+.p_news_read .n_a_title { font-size: 32px; } 
+.p_news_read .tag, .p_news_read .meta_txt { font-size: 15px; }
+.p_news_read .btn_font { width: 40px; height: 40px; font-size: 20px; }
+.p_news_read .n_a_body p { line-height: 1.6; }
+.p_news_read .n_a_inbtn { margin: 30px auto; padding: 25px 20px; }
+.p_news_read .n_a_inbtn button { font-size: 16px; padding: 20px 15px; }
+.p_news_read .n_a_inbtn .icon_arrow::after { width: 8px; height: 8px; }
+.p_news_read .n_a_inbtn button img { width: 18px; }
+.p_news_read .n_a_otbtn { margin: 30px auto; }
+/* 커뮤니티 인기글 */
+.n_a_comm_card { gap: 20px; }
+.n_a_comm_wrap { padding: 20px 15px; }
+.n_a_comm_wrap .c_left .c_title { background: url(https://img.tf.co.kr/ss/fns/icon/icon_best_post.svg) no-repeat left 15% / 18px; font-size: 17px; padding-left: 24px; margin: 0 0 15px; }
+.n_a_comm_wrap .c_left .c_sub { font-size: 13px; }
+.n_a_comm_wrap .confeed .act { margin-top: 15px; }
+.n_a_comm_wrap .confeed .act .repill { font-size: 14px; }
+.n_a_comm_wrap .c_thumb { flex: 0 0 94px; width: 94px; height: 94px; }
+.n_a_comm .dots { margin-top: 20px; }
+
+/* ================= 스폰 미션 // 광고 보기 1 =================== */
+.spon_inner { padding: 80px 0 0; gap: 40px; }
+.spon1_top h1 .top_deco { left: 34%; }
+.spon_top_sec { font-size: 18px; padding: 10px 15px; }
+.spon1_top h1 { font-size: 3.5rem; }
+.spon1_card .top_txt { width:70% }
+.spon1_card .touch_btn { left:65%; bottom:0; transform: translateX(-50%); }
+.spon1_notice { padding: 30px 20px; }
+/* ================= 스폰 미션 // 광고 보기 2 =================== */
+.spon2_top h1 .top_deco { left: 34%; }
+.spon_top_sec { font-size: 18px; padding: 10px 15px; }
+.spon2_top h1 { font-size: 3.5rem; }
+.spon2_card .top_txt2 { width:80% }
+.spon2_card h2 { font-size: 26px; }
+.spon2_card h2 img { width: 26px; }
+.spon2_item { gap:20px; padding: 20px; }
+.spon2_txt { font-size: 18px; }
+.spon2_btn { flex:0 0 30%; padding: 15px 5px; font-size: 18px; }
+/* ================= 스폰 미션 // 스테이션 =================== */
+.spon2_top h3 { font-size: 30px; margin: 20px auto; }
+.spon2_top h5 { margin: 0 auto 80px; font-size: 22px; }
+.spon2_station { padding: 80px 20px; gap: 40px; }
+.spon2_station .spon2_s_txt { line-height: 1.4; font-size: 20px; }
+.spon2_s_notice .meta .ulabel { font-size: 20px; }
+
+/* ================= 오늘의 별 모으기 팝업 =================== */
+.modal_content .g_fns_grid .g_fns_card { padding: 25px 20px; }
+.modal_content .g_fns_grid .f_checkbox { gap:14px; font-size: 19px; }
+.modal_content .g_fns_grid .f_checkbox { flex: 0 0 78%; }
+.modal_content .g_fns_grid .m_num { font-size: 16px; }
+.modal_content .g_fns_grid .tbox { padding: 20px; }
+.modal_content .g_fns_grid .tbox h3 { font-size: 18px; }
+.modal_content .g_fns_grid .tbox > span { font-size: 15px; }
+
+/* ================= 포인트 구매하기 웹/앱/동의 팝업 =================== */
+.p_buy_wrap { margin: 30px auto; }
+.buy_agree_pop .buy_agre_radio { justify-content: flex-start; gap: 30px; }
+.buy_agree_pop .buy_agre_radio .f_radio { flex: 0 0 auto; }
+
+/* ================= 포인트 구매하기 // 결제 수단 =================== */
+.p_pay_wrap .p_pay_price { margin: 30px auto 40px; }
+.p_pay_wrap .p_pay_price p { font-size: 26px; }
+.p_pay_wrap .g_fns_grid .g_fns_card { padding: 25px 20px; }
+.p_pay_wrap .g_fns_grid .g_fns_card .g_fns_card_txt h4 { font-weight: normal; margin-bottom: 0; }
+
+
+/* ================= 팬버십 1,3개월 / 혜택 비교 =================== */
+.p_fbs_top { padding: 25px 20px; }
+.p_fbs_top img { width: 110px; }
+.p_fbs_top h2 { font-size: 20px; }
+.p_fbs_top > span { font-size: 14px; }
+.tap_p_fbs_wrap { margin: 0 auto 50px; }
+.fbs_wrap .tabs_bar { gap: 10px; margin:30px auto 0 }
+.fbs_wrap .tabs_bar .tab_fbs { padding: 12px 20px; font-size: 17px; }
+.fbs_wrap .panels .panel .box_text li { font-size: 14px; }
+.tap_p_fbs_wrap .g_tbl .list_text ul { gap: 15px; }
+.tap_p_fbs_wrap .g_tbl .list_text li { font-size: 17px; }
+.fbs_wrap .panels .panel .box_text { padding: 40px 20px; }
+.tab_p_com_1 span, .tab_p_com_3 span { font-size: 20px; }
+.tap_p_fbs_wrap .g_tbl .g_tbl_con p.subcolor { font-size: 14px; }
+.tap_p_fbs_wrap .g_angel_angelkit .g_angel_cell { padding: 14px 12px; }
+
+/* ================= 취소 환불 =================== */
+.pcancel_wrap .tabs_bar { margin: 30px auto 0; }
+.pcancel_wrap .tabs_bar .tab_pcan { padding: 12px 20px; font-size: 17px; }
+
+/* ================= 무료 충전소 =================== */
+.p_freestar_wrap .g_fns_grid { margin-top: 30px; }
+
+/* ================= 오늘의 G+ 포인트 =================== */
+.p_gpoint_wrap .g_fns_grid { margin: 30px auto 50px; }
+.p_gpoint_wrap .g_fns_grid .btn { margin-top: 20px; }
+.p_gpoint_wrap .g_fns_grid .g_fns_card { padding: 24px 20px; }
+.p_gpoint_wrap .g_fns_grid .f_checkbox { flex: 0 0 80%; }
+.p_gpoint_wrap .f_checkbox input:disabled ~ .f_label { font-size: 19px; }
+
+/* ================= 타임별 이벤트 ================== */
+.timestar_wrap .timestar_top img, .timestar_fbs_wrap .timestar_fbs_top img { width: 80%; }
+.timestar_wrap .timestar_top, .timestar_fbs_wrap .timestar_fbs_top {
+    padding: 60px 0 50px; width: 100%; margin: 0 auto; text-align: center;
+}
+.timestar_box { padding: 60px 10px 60px; }
+.timestar_tit { padding: 14px 20px; top: -30px; }
+.timestar_tit .tit { font-size: 24px; }
+.timestar_timer { padding: 0 40px; }
+.timestar_timer .digit { width: 19%; font-size: 5rem; }
+.timestar_bottom { padding: 50px 0 60px; }
+.timestar_bottom .btn .timestar_balloon2 { top: -40px; line-height: 1.2; padding: 6px 20px; font-size: 15px; }
+.time_btn_wrap { gap: 20px;}
+
+/* ================= 팬버십 타임별 이벤트 ================== */
+
+
+
+}

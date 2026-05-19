@@ -1,0 +1,104 @@
+var captcha = null;
+
+const cloudflareSiteKey = "0x4AAAAAACL8dAz-Utr4X2oe";
+
+const setCaptcha = () => {
+    
+    let captchaElement = null;
+    let widgetId = null; // 위젯 ID 저장용
+    let callback = ()=>{
+
+    };
+
+    const init = () => {
+        captchaElement = document.querySelector('#captcha');
+        if (captchaElement) {
+            // 1. 스크립트 중복 로드 방지 및 로드 대기
+            if (!window.turnstile) {
+                const script = document.createElement('script');
+                script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"; // 명시적 렌더링 모드
+                script.async = true;
+                script.defer = true;
+                document.head.appendChild(script);
+
+            } 
+
+            // 닫기 버튼 이벤트 미리 바인딩
+            captchaElement.querySelector('.mClose').addEventListener('click', (e) => {
+                e.preventDefault();
+                captchaElement.classList.add("hidden");
+            });
+
+
+            captchaElement.querySelector('.btn_m_100').addEventListener('click', (e) => {
+                e.preventDefault();
+                captchaElement.classList.add("hidden");
+
+                const confirmBtn = captchaElement.querySelector('.btn_m_100');
+
+                callback(confirmBtn.dataset.token);
+            });
+
+        }
+    };
+
+    const open = (callbackFunction) => {
+
+        const confirmBtn = captchaElement.querySelector('.btn_m_100');
+
+        confirmBtn.disabled = true;
+        confirmBtn.dataset.token = "";
+
+        if (!window.turnstile) {
+            alert("인증 라이브러리가 로딩 중입니다. 잠시 후 다시 시도해주세요.");
+            return;
+        }
+
+        captchaElement.classList.remove("hidden");
+
+
+        if (widgetId !== null) {
+            turnstile.reset(widgetId);
+            return;
+        }
+        
+        callback = callbackFunction;
+        
+        widgetId = turnstile.render('.cf-turnstile', {
+            sitekey: cloudflareSiteKey,
+            theme: 'light',
+            callback: function(token) {
+                
+                confirmBtn.disabled = false;
+                confirmBtn.dataset.token = token;
+
+            },
+            'error-callback': function() {
+                
+                turnstile.reset(widgetId);
+
+                confirmBtn.disabled = true;
+                confirmBtn.dataset.token = "";
+            }
+        });
+    };
+
+    init();
+
+    return {
+        open(callbackFunction) { open(callbackFunction); }
+    }
+}
+
+
+const initCaptcha = () => {
+    if (typeof setCaptcha === "function") {
+        captcha = setCaptcha();
+    }
+};
+
+if (document.readyState === "complete" || document.readyState === "interactive") {
+    initCaptcha();
+} else {
+    document.addEventListener('DOMContentLoaded', initCaptcha);
+}
